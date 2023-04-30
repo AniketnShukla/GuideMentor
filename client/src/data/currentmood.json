@@ -1,0 +1,80 @@
+{
+    "rage": {
+        "0": "candid",
+        "1": "wisdom",
+        "2": "open-mindedness",
+        "3": "wise",
+        "4": "thoughtful",
+        "5": "reflective",
+        "6": "humble",
+        "7": "Wisdom",
+        "8": "realistic",
+        "9": "philosophical"
+    },
+    "restless":{
+        "0": "contemplative",
+        "1": "thought-provoking",
+        "2": "candid",
+        "3": "self-care",
+        "4": "gratitude"
+    },
+    "lost":{
+        "0": "despair",
+        "1": "determination",
+        "2": "motivation",
+        "3": "inspiration",
+        "4": "self-improvement",
+        "5": "action",
+        "6": "resilience",
+        "7": "courage",
+        "8": "confidence",
+        "9": "boldness",
+        "10": "responsibility",
+        "11": "Motivational",
+        "12": "condescending",
+        "13": "encouraging",
+        "14": "serious",
+        "15": "inspiring",
+        "16": "confident",
+        "17": "team-spirited",
+        "18": "Motivation",
+        "19": "Inspiration",
+        "20": "thought-provoking",
+        "21": "hope",
+        "22": "self-assuredness",
+        "23": "meaning",
+        "24": "growth",
+        "25": "motivational",
+        "26": "inspirational",
+        "27": "empowered",
+        "28": "determined",
+        "29": "motivated",
+        "30": "inspired"
+    },
+    "distracted":{
+        "0": "challenged",
+        "1": "condescending",
+        "2": "hopeless",
+        "3": "firm",
+        "4": "resolute",
+        "5": "warning",
+        "6": "authenticity",
+        "7": "self-care",
+        "8": "gratitude",
+        "9": "empowerment",
+        "10": "insightful"
+        
+    },
+    "lust":{
+        "0": "introspective"
+
+    },
+    "sad":{
+        "0": "funny",
+        "1": "Humorous",
+        "2": "comforting",
+        "3": "optimistic",
+        "4": "compassionate",
+        "5": "hopeful"
+    }
+}

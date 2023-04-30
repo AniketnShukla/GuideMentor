@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  
+  <style>
+  .circle-container {
+    position: relative;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+  .circle.big {
+    width: 300px;
+    height: 300px;
+    background-color: #ccc;
+  }
+  
+  .circle.small {
+    border-radius: 50%;
+    background-color: #f00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+<body>
+  <div class="circle-container" id="circle-container"></div>
+  
+</body>
+
+<script>
+const container = document.getElementById('circle-container');
+const numCircles = 8;
+const circleSize = 50;
+const circleMargin = 20;
+const containerSize = circleSize * numCircles + circleMargin * (numCircles - 1);
+container.style.width = containerSize + 'px';
+container.style.height = containerSize + 'px';
+
+for (let i = 0; i < numCircles; i++) {
+  const circle = document.createElement('div');
+  circle.classList.add('circle', 'small');
+  circle.style.width = circleSize + 'px';
+  circle.style.height = circleSize + 'px';
+  container.appendChild(circle);
+  
+  const angle = (360 / numCircles) * i;
+  const radius = containerSize / 2 - circleSize / 2;
+  const x = Math.cos(angle * Math.PI / 180) * radius;
+  const y = Math.sin(angle * Math.PI / 180) * radius;
+  circle.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+</html>

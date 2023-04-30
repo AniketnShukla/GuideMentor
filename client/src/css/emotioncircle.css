@@ -1,0 +1,27 @@
+.emotioncircle{
+    background-color: rgba(17, 16, 16, 0.412);
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transition:  375ms ease-in-out;
+    font-size: 1rem;
+    font-weight: 100;
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: 0 8px 32px 0 rgba(2, 2, 2, 0.37);
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    outline: 1px solid transparent;
+}
+
+.emotioncircle:hover{
+    outline: 1px solid #04d9ff;
+    transform: scale(1.1);
+}
+
+#active{
+    outline: 1px solid #04d9ff;
+}
