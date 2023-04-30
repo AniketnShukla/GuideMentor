@@ -47,6 +47,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', require('./routes/root'))
 
+//health of server
+app.get('/healthz', (req, res)=> {
+    res.json({status: 200});
+})
+
 //url blockchian website sends data to
 // app.use('/meds', require('./routes/medRoutes'))
 
