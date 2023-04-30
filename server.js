@@ -14,6 +14,12 @@ const PORT = process.env.PORT || 3200
 const { logEvents } = require('./middleware/logger')
 const jwt = require('jsonwebtoken')  
 
+if (process.env.NODE_ENV === 'production') {
+    //*Set static folder up in production
+    app.use(express.static('client/build'));
+
+    app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  }
 
 connectDB()
 
