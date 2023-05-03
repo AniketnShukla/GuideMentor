@@ -11,7 +11,7 @@ const quoteSchema = new mongoose.Schema({
         required: true,
     },
     author: {
-        type: Number,
+        type: String,
         required: true
     },
 

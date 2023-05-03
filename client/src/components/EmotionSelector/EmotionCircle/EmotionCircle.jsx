@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import './../css/emotioncircle.css'
+import './emotioncircle.css'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { 
   setCurrentState,
-} from '../features/emotion/currentStateSlice'
+} from '../../../features/emotion/currentStateSlice'
 // import quoteData from '../data/quotes.json';
 // import emotionData from '../data/currentmood.json';
 
-import { setQuote } from '../features/quote/quoteSlice';
+import { setQuote } from '../../../features/quote/quoteSlice';
 import { Link } from 'react-router-dom';
 
 const EmotionCircle = (props) => {
@@ -38,7 +38,7 @@ const EmotionCircle = (props) => {
       try {
         const response = await axios.get('http://localhost:3200/quote')
         setQuoteData(response.data);
-        // console.log(response.data)
+        console.log(response.data)
     } catch (error) {
       console.log(error)
     }
@@ -72,20 +72,22 @@ const EmotionCircle = (props) => {
     //error when emotion is not defined ir when currentstate is empty throws error, have to fix
     // if(Object.keys(emotionData[currentState]) !== undefined){
       console.log('hQ currentstate ' + currentState)
-      // console.log(emotionData)
+      console.log(emotionData)
       //only render quote when the currentState is set and the quoteData has been fetched from DB
       if(currentState && quoteData != null){
-        //answerStates are states of mind which will help currentState
-      const size =  Object.keys(emotionData[currentState]).length;
-      const randomNumber = Math.floor( Math.random() * size )
-      console.log(size);
-      console.log(randomNumber);
-      const resultArray = quoteData.filter((obj) => obj.emotion === emotionData[currentState][randomNumber])
-      const RandomNumber = Math.floor( Math.random() * resultArray.length )
+        // answerStates are states of mind which will help currentState
+        // const randomNumber = Math.floor( Math.random() * size )
+        // console.log(size);
+        // console.log(randomNumber);
+        const resultArray = quoteData.filter((obj) => obj.emotion === currentState)
+        // console.log(resultArray)
+        const size =  resultArray.length;
+        console.log('Number of quotes of selected emotion: ' + size)
+      const RandomNumber = Math.floor( Math.random() * size )
       const resultQuote = resultArray.length > 0 ?  resultArray[RandomNumber]?.quote : '';
       const resultAuthor = resultArray.length > 0 ?  resultArray[RandomNumber]?.author : '';
-      // console.log(resultQuote)
-      // console.log(resultAuthor)
+      // // console.log(resultQuote)
+      // // console.log(resultAuthor)
       setStateQuote(resultQuote)
       setStateAuthor(resultAuthor)
       dispatch(setQuote({stateQuote: resultQuote, stateAuthor: resultAuthor}))
@@ -104,7 +106,14 @@ const EmotionCircle = (props) => {
   return (
     // <Link to="/default">
       <div className='emotioncircle' onClick={handleClick} id={active === props.name ? 'active':''}> 
-            { props.name }
+           {
+           (quoteData) ?  
+           ( props.name )
+           :
+          //  (<div>
+           ( `Loading` )
+          //  </div>)
+          }
       </div>
     // </Link> 
   )

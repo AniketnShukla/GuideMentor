@@ -1,7 +1,7 @@
 import React from 'react'
-import emotions from './../data/currentmood.json'
-import EmotionCircle from './EmotionCircle'
-import './../css/emotionwheel.css'
+import emotions from '../../../data/currentmood.json'
+import EmotionCircle from '../EmotionCircle/EmotionCircle'
+import './emotionwheel.css'
 
 
 const EmotionWheel = () => {

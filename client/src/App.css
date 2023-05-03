@@ -8,7 +8,6 @@ body{
   height: 100%;
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Poppins', sans-serif;
-
 }
 .App{
   height: 100vh; 
@@ -17,7 +16,6 @@ body{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-   
 }
 .prompt-input{
   position: absolute;

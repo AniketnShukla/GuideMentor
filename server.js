@@ -52,16 +52,9 @@ app.get('/healthz', (req, res)=> {
     res.json({status: 200});
 })
 
-//url blockchian website sends data to
-// app.use('/meds', require('./routes/medRoutes'))
-
 app.use('/quote', require('./routes/quoteRoutes'))
 app.use('/emotion', require('./routes/headSpaceRoutes'))
 
-app.use('/raw-material', require('./routes/rawMaterialRoutes'))
-
-//temporary url the customer will send information to interact with the database 
-app.use('/customer', require('./routes/customerRoutes'))
 
 // app.use('/users', require('./routes/userRoutes'))
 
@@ -80,9 +73,6 @@ app.all('*', (req, res) => {
 //don't remember what it does
 app.use(errorHandler)
 
-// app.listen(PORT, ()=>{
-//     console.log(`Server listening on PORT ${PORT}`)
-// })
 mongoose.connection.once('open', () => {
     console.log('COnnected to mongoDB')
     app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`))

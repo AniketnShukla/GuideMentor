@@ -1,0 +1,2 @@
+1.For New authors, add a folder of warrior esque images, (knights, duels, etc)
+2.Implement deletion of quote
