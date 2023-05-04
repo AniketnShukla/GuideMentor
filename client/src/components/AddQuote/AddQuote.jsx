@@ -11,10 +11,13 @@ const AddQuote = () => {
     useEffect(() => {
         const app = document.getElementById('add-quote');
         app.style.backgroundImage = `url(${img})`;
-    })
+    },[])
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3200/quote', {
+        const currentUser = sessionStorage.getItem('username');
+
+        axios.post('http://localhost:3200/user/quote', {
+            currentUser: currentUser,
             quote: quote,
             author: author,
             emotion: emotion
@@ -30,7 +33,7 @@ const AddQuote = () => {
         </div>
         </Link>
             
-        <form onSubmit={handleSubmit} class="form">
+        <form onSubmit={handleSubmit} className="form">
             <label htmlFor="quote">Quote</label>
             <input 
                 type="text"
@@ -47,10 +50,6 @@ const AddQuote = () => {
                 onChange={(e) => setAuthor(e.target.value) } 
                 />
             <label htmlFor="emotion">Emotion</label>
-            {/* <input 
-                type="text"
-                value={emotion}
-            /> */}
             <select
             id="emotion"
             className='secondary-input'

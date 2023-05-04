@@ -1,2 +1,7 @@
+0.Implement insertion of emotion in user emotionDaata array
 1.For New authors, add a folder of warrior esque images, (knights, duels, etc)
 2.Implement deletion of quote
+2.Implement deletion of emotion
+3.Make a start page
+4.Rectify active emotion css
+5.Convert Navbar into Hidden Sidebar, and fix the problem with links not being clickable

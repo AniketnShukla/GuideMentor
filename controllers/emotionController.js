@@ -2,39 +2,24 @@
 // const fs = require('fs')
 // const path = require('path')
 // const asyncHandler = require('express-async-handler')
-// const CurrentHeadSpace = require('../models/CurrentHeadSpace')
-// const Quote = require('../models/Quote')
+// // const CurrentHeadSpace = require('../models/CurrentHeadSpace')
+// const User = require('../models/User')
 
-// const getQuoteData = asyncHandler(async(req, res) => {
+// const   getEmotion = asyncHandler(async(req, res) => {
 //     //get some better selection factor than "rage" please
-//     const quoteData = await Quote.find().select().lean()
-//     // console.log(meds)
-//     if(!quoteData) {
+//     const { currentUser } = req.body
+//     const emotionData = await User.findOne({
+//         username: currentUser
+//     })
+//     console.log(emotionData)
+//     if(!emotionData) {
 //         return res.status(400).json({
-//             message: 'No Quote Data found'
+//             message: 'No Emotion Data found'
 //         })
 //     }
-//     res.json(quoteData)
+//     res.json(emotionData)
 // })
-
-// const saveQuote = asyncHandler(async(req, res) => {
-//     const {quote, author, emotion} = req.body;
-//     console.log(quote, author, emotion)
-//     const quoteObject = {
-//     'quote': quote,
-//     'author': author,
-//     'emotion': emotion,
-//     }
-//     const quoteDB = await Quote.create(quoteObject)
-//     if(quoteDB){
-//         console.log(quoteDB)
-//         res.status(201).json({status: 'ok'})  
-//     }else{
-//         res.status(400).json({message: 'Invalid data received'})  
-//     }
-// })
-
-// // //@desc Create new users;
+// // //@desc Create new users
 // // //@route POST /users
 // // //@access Private
 // // const addNewRawMaterial = asyncHandler(async(req, res) => {
@@ -77,6 +62,5 @@
 // // })
 
 // module.exports = {
-//     getQuoteData,
-//     saveQuote,
+//     getEmotion,
 // }

@@ -52,8 +52,9 @@ app.get('/healthz', (req, res)=> {
     res.json({status: 200});
 })
 
-app.use('/quote', require('./routes/quoteRoutes'))
-app.use('/emotion', require('./routes/headSpaceRoutes'))
+app.use('/user', require('./routes/userRoutes'))
+// app.use('/quote', require('./routes/quoteRoutes'))
+// app.use('/emotion', require('./routes/emotionRoutes'))
 
 
 // app.use('/users', require('./routes/userRoutes'))

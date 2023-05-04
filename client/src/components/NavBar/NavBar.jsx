@@ -16,13 +16,36 @@ const NavBar = () => {
   return (
         <nav>
             <ul>
-              <div className='add-btn'>
               <Link to='/add' >
-                <li>Add</li>
-              </Link>
+                <li>
+              <div className='add-btn'>
+                Add
               </div>
+              </li>
+              </Link>
+              <Link to='/login' >
+                <li>
+              <div className='add-btn'>
+                Login
+              </div>
+              </li>
+              </Link>
+              <Link to='/signup' >
+                <li>
+                Signup
+                  </li>
+              </Link>
+              //make a start page
+              <Link to='/login' onClick={()=>{
+                sessionStorage.removeItem('username')
+              }}>
+                <li>
+                Logout
+                  </li>
+              </Link>
+              {/* </div> */}
               <div onClick={handleClick}>
-                <li>Freeze Background</li>
+              <li>Freeze  Background</li>
               </div>
             </ul>
         </nav>

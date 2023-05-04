@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background: url("../assets/Bg.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-img:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 999;
+  width: 370px;
+  text-align: center;
+  padding: 60px 32px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: -1px 4px 28px 0px rgba(58, 58, 58, 0.5);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.content img {
+  background-color: transparent;
+  height: 10vh;
+}
+
+.content header {
+  color: rgb(0, 36, 136);
+  font-size: 33px;
+  font-weight: 400;
+  margin: 0 0 35px 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.field {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: -1px 4px 28px 0px rgba(58, 58, 58, 0.5);
+}
+
+.field span {
+  color: #222;
+  width: 40px;
+  line-height: 45px;
+}
+
+.field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.field1 input {
+  margin: auto;
+}
+
+.show {
+  position: absolute;
+  right: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  cursor: pointer;
+  display: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.password:valid ~ .show {
+  display: block;
+}
+
+.space {
+  margin-top: 16px;
+}
+
+.pass {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.pass a {
+  color: rgb(0, 0, 0);
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.pass:hover a {
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  background: rgb(23, 62, 169);
+  border: none;
+  height: 45px;
+  width: 40%;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+input[type="submit"]:hover {
+  background: #2d6b9a;
+  color: black;
+}
+
+.login {
+  color: rgb(0, 0, 0);
+  margin: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.signup a {
+  color: rgb(23, 62, 169);
+  text-decoration: none;
+}
+
+.signup a:hover {
+  color: rgb(68, 117, 242);
+  text-decoration: underline;
+}
