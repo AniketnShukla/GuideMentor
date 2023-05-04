@@ -1,20 +1,23 @@
 import React, { useState } from "react";
-import "./login.css";
+// import "./login.css";
+import "./signup.css";
 import axios from "axios";
 // import logo from "../assets/logo.png";
 
 
 const Login = () => {
-    const [formData, setFormData] = useState({username: "",password: ""});
+  //name can be username or email
+    const [formData, setFormData] = useState({name: "",password: ""});
   
     const handleChange = (event) => {
+      //name can be username or email
       const { name, value } = event.target;
       //need to understand the below line 
       setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-      alert(`Name: ${formData.username}, Password: ${formData.password}`);
+      // alert(`Name: ${formData.username}, Password: ${formData.password}`); 
       axios.post('http://localhost:3200/user/login', 
       formData
       ).then((response) => {
@@ -35,25 +38,27 @@ const Login = () => {
     }
   return (
    <div className="bg-img" id="signup">
-      <div className="content">
-        {/* <img src={logo} className="logo" /> */}
+      <p class="start_header">HeadStache</p>
+      <div className="gate-form">
+        {/* start_header classis in start.css */}
         <br />
         <header>Login</header>
         <form 
         onSubmit={handleSubmit}
         >
-          <div className="field">
+          <div className="input-group">
             <span className="fa fa-user"></span>
             <input
               type="text"
               id="name"
-              name="username"
-              value={formData.username}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              placeholder="Full Name"
+              // placeholder="username | email"
+              placeholder="username"
             />
           </div>
-          <div className="field space">
+          <div className="input-group space">
             <span className="fa fa-lock"></span>
             <input
               type="password"
@@ -66,7 +71,7 @@ const Login = () => {
           </div>
 
           <br />
-          <div className="field1">
+          <div className="input-group1">
             <input type="submit" value="Submit" />
           </div>
           <br />

@@ -5,3 +5,12 @@
 3.Make a start page
 4.Rectify active emotion css
 5.Convert Navbar into Hidden Sidebar, and fix the problem with links not being clickable
+7.Restrict emotion input to not mess the ui of emotioncircle
+8.suggest previous emotion input with ability to input new emotion
+9.fix email input, takes in wrong iunput on submit and why do we need email?
+10.Disallow duplicate input on user
+11.img not updating when author not set check
+12.implementation at the backend to login with either username or email works, but the frontend uses sessionStorage 
+    and the username specificaly to fetch all the details to display, use jwt and make the login and signup process proper
+    along with decoupling the username with the fetching of details, will be commenting out the backend email or user login
+    implementation.

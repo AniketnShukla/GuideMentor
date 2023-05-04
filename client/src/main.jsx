@@ -10,6 +10,7 @@ import AddQuote from './components/AddQuote/AddQuote'
 import Error404 from './components/Error404'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import Start from './components/Start'
 
 let loggedIn = false;
 const user = sessionStorage.getItem('username')
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/"} />)} />
+          <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
           <Route path="/default" element={ loggedIn ? (<QuotePage />) : ( <Navigate replace to ={"/"} />)} />

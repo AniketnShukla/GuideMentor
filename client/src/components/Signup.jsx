@@ -13,15 +13,15 @@ const Signup = () => {
   const [formData, setFormData] = useState({name: "",email: "", password: ""});
   let img = useSelector((state) => state.imageReducer.image)
   console.log(img)
-  useEffect(() => {
-    if(!img){
-      const size = images['Unregistered-author'].length
-      const randomNum = Math.floor( Math.random() * size);
-      img = images['Unregistered-author'][randomNum];
-    }
-    const app = document.getElementById('signup');
-      app.style.backgroundImage = `url(${img})`;
-  },[])
+  // useEffect(() => {
+  //   if(!img){
+  //     const size = images['Unregistered-author'].length
+  //     const randomNum = Math.floor( Math.random() * size);
+  //     img = images['Unregistered-author'][randomNum];
+  //   }
+  //   const app = document.getElementById('signup');
+  //     app.style.backgroundImage = `url(${img})`;
+  // },[])
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,40 +31,47 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Name: ${formData.name}, Email: ${formData.email}, Password: ${formData.password}`);
+    // alert(`Name: ${formData.name}, Email: ${formData.email}, Password: ${formData.password}`);
     axios.post('http://localhost:3200/user/signup', 
       formData
     ).then((response) => {
-      alert(response.status)
-      if (response.status === 'ok') {
-        navigate.push('/login')
+      if (response.data.status === 'ok') {
+        window.location.href = '/login';
       } 
-    }).catch((e) => {
-      console.log(e);
-  })
+      else{
+        const errorMessage = response.data.message;
+        alert(response.data.message);
+        console.log(response.data)
+      }
+    })
+  //   .catch((e) => {
+  //     console.log(e);
+  // })
   }
 
   return (
 <div id="signup">
-      <div className="content" >
+        <p class="start_header">HeadStache</p>
+      <div className="gate-form" >
         {/* <img src={logo} className="logo" /> */}
+        {/* start_header classis in start.css */}
         <br />
-        <header>Signup </header>
-        <form 
-        onSubmit={handleSubmit}
-        >
-          <div className="field">
+        <header>Signup</header>
+        <form onSubmit = {handleSubmit}>
+          <div className="input-group">
             <span className="fa fa-user"></span>
             <input
+              placeholder="username"
+              pattern="^[a-zA-Z0-9]{4,10}$"
+              title="No special characters allowed"
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Full Name"
             />
           </div>
-          <div className="field space">
+          <div className="input-group space">
             <span className="fa fa-envelope"></span>
             <input
               type="email"
@@ -75,7 +82,7 @@ const Signup = () => {
               placeholder="Email"
             />
           </div>
-          <div className="field space">
+          <div className="input-group space">
             <span className="fa fa-lock"></span>
             <input
               type="password"
@@ -89,10 +96,9 @@ const Signup = () => {
           </div>
 
           <br />
-          <div className="field1">
+          <div className="input-group1">
             <input
               type="submit"
-              onClick={() => (window.location.href = "/login")}
               value="Submit"
             />
           </div>

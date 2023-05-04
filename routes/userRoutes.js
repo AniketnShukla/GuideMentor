@@ -12,17 +12,20 @@ router.route('/')
 // router.route('/get-all-orders')
 // .post(userController.getAllOrders)
 
+router.route('/signup')
+.post(userController.createNewUser)
+
+router.route('/login')
+.post(userController.loginUser)
+
 router.route('/emotion')
 .post(userController.getUserEmotions)
 
 router.route('/quote')
 .post(userController.saveQuote)
 
-router.route('/signup')
-.post(userController.createNewUser)
 
-router.route('/login')
-.post(userController.loginUser)
+
 
 // router.route('/buy')
 // .post(userController.placeOrder)

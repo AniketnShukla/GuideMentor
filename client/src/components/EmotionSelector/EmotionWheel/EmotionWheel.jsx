@@ -31,7 +31,6 @@ useEffect(()=>{
   useEffect(()=>{
     console.log(userData);
     (userData.quoteData) ? emotionQuoteArray = userData.quoteData.filter((quote) => quote.emotion === 'sad' ) : []
-    // setDataCheck(true);
     setCircle(emotions.map((emotion, index) => (
       <EmotionCircle 
       key = { index }

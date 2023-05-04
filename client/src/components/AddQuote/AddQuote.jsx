@@ -1,17 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import './AddQuote.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 const AddQuote = () => {
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
     const [emotion, setEmotion] = useState('');
-    const img = useSelector((state) => state.imageReducer.image)
+    const [checkMultiple, setCheckMultiple] = useState(false);
+    const [userEmotions, setUserEmotions] = useState([]);
+    const [radioEmotion, setRadioEmotion] = useState(null);
+    let img = useSelector((state) => state.imageReducer.image)
+    //img not updating when author not set check
+    if(!img) img = "/src/assets/Unregistered-author/img3.jpg"; 
+
     useEffect(() => {
         const app = document.getElementById('add-quote');
         app.style.backgroundImage = `url(${img})`;
+        const currentUser = sessionStorage.getItem('username')
+        axios.post('http://localhost:3200/user/emotion', {
+            currentUser: currentUser
+          })
+          .then((response)=>{
+            console.log(response.data);
+            setUserEmotions(response.data?.emotionData)
+          },[])
+          .catch((e)=>{
+            console.log(e);
+          })
     },[])
+
+    if(userEmotions?.length > 0){
+
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         const currentUser = sessionStorage.getItem('username');
@@ -50,6 +71,51 @@ const AddQuote = () => {
                 onChange={(e) => setAuthor(e.target.value) } 
                 />
             <label htmlFor="emotion">Emotion</label>
+            <div className="radio-group">
+                {userEmotions.map((emotion, index)=>(
+                    <div className="radio" key={index}>
+                        <label>
+                            <input
+                            type="radio"
+                            value= {emotion}
+                            checked={radioEmotion === emotion}
+                            onChange={(e) => {
+                                setRadioEmotion(e.target.value)
+                                setEmotion(e.target.value)
+                            }}
+                            />
+                            &nbsp;{ emotion }
+                        </label>  
+                    </div>
+                ))}
+                <div className="radio">
+                        <label>
+                            <input
+                            type="radio"
+                            value= ""
+                            checked={radioEmotion === null}
+                            onChange={(e) => {
+
+                                setRadioEmotion(null)
+                                setEmotion('')
+                            }}
+                            />
+                            &nbsp;clear
+                        </label>  
+                    </div>
+            </div>
+            <input 
+                type="text"
+                id="emotion"
+                className='secondary-input'   
+                value={emotion}
+                disabled={radioEmotion !== null}
+                onChange={(e) => {
+                    setRadioEmotion(null);
+                    setEmotion(e.target.value)
+                }} 
+                />
+            {/* <label htmlFor="emotion">Emotion</label>
             <select
             id="emotion"
             className='secondary-input'
@@ -62,8 +128,24 @@ const AddQuote = () => {
                 <option value="distracted">Distracted</option>
                 <option value="lust">Lust</option>
                 <option value="sad">Sad</option>
-            </select>
-            <button type="submit" className='submit-btn'>Submit</button>
+            </select> */}
+
+            <div className="multi-checkbox">
+                <label htmlFor="multipleInput">multiple inputs</label>
+                <input 
+                    type="checkbox"
+                    id="multipleInput"
+                    checked={checkMultiple}
+                    className='tertiary-input'   
+                    value={author}
+                    onChange={(e) => setCheckMultiple(!checkMultiple) } 
+                    />
+            </div>
+            <button type="submit" className='submit-btn' onClick={()=>{
+                if(!checkMultiple) {
+                    window.location.href = '/'
+                }
+            }}>Submit</button>
         </form>
     </div>
   )

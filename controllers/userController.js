@@ -91,7 +91,6 @@ const createNewUser = asyncHandler(async(req, res) => {
         name, 
         email, 
         password,
-        address
      } = req.body
     console.log('works ' + email);
 
@@ -100,11 +99,17 @@ const createNewUser = asyncHandler(async(req, res) => {
     // if(!username || !password || !Array.isArray(roles) || !roles.length){
     //     return res.status(400).json({message: 'All fields are required'})
     // }
-    //Check for duplicates
-    // const duplicate = await User.findOne({username}).lean().exec()
-    // if(duplicate){
-    //     return res.status(400).json({message: 'Duplicate username'})
-    // }
+    // Check for duplicates
+    const duplicateUserName = await User.findOne({username: name}).lean().exec()
+    if(duplicateUserName){
+        console.log('dupli')
+        return res.json({message: 'Duplicate username'})
+    }
+    const duplicateEmail  = await User.findOne({email: email}).lean().exec()
+    if(duplicateEmail){
+        console.log('dupli')
+        return res.json({message: 'Email already in use'})
+    }
 
     // const hashedPwd = await bcrypt.hash(password, 10) //salt rounds
     // const hashedPwd = await bcrypt.hash(password, 10) //salt rounds
@@ -126,18 +131,12 @@ const createNewUser = asyncHandler(async(req, res) => {
     if(!name || !password ){
         return res.status(400).json({message: 'All fields are required'})
     }
-    //Check for duplicates ... will see later
-    // const duplicate = await User.findOne({name}).lean().exec()
-    // if(duplicate){
-    //     return res.status(400).json({message: 'Duplicate username'})
-    // }
-
     // const userObject = {username, "password": hashedPwd, roles}
     // //Create and store new user
     const user = await User.create(userObject)
     if(user){  //create
         // console.log(userObject)
-        return res.json({status: 'ok', user: name})
+        return res.json({status: 'ok', user: name, message: 'User Registered'})
         // res.status(201).json({message: `New User ${name} created`})  
     }else{
         res.status(400).json({message: `Invalid user data received`})  
@@ -210,24 +209,34 @@ const createNewUser = asyncHandler(async(req, res) => {
 // @route PATCH /users
 // @access Private
 const loginUser = asyncHandler(async(req, res) => {
-    const { username, password } = req.body
+    const { name, password } = req.body;
     // const userObject = {
     //     'username': username,
     //     //use bcypt 
     //     'password': password,
     // }
 
-    const userDB = await User.findOne({
-        'username': username,
-        'password': password 
+    //checking if name is email or password ********Important, Don't Delete
+    //email or user login
+    // const userDB = User.findOne({
+    //     $or:[
+    //         {username: name},
+    //         {email: name}
+    //     ],
+    //     password: password
+    // })
+    const userDB = User.findOne({
+        username: name,
+        password: password
     })
+
+    console.log(userDB);
     if(userDB){
     //     const token = jwt.sign({
     //         username: user.username,
     //         password: user.password
     //     }, 'secret123')
-    console.log(userDB);
-        return res.json({status: 'ok', username: username})
+        return res.json({status: 'ok', username: name})
     }
     else{
         return res.json({status: 'error', user: false})

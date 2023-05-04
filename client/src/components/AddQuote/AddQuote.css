@@ -3,7 +3,7 @@
 .add-quote{
   width: 100%;
   min-height: 100vh;
-  background-image: url(/src/assets/Kratos/1.jpg);
+  background-image: url(/src/assets/Unregistered-author/1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,6 +11,16 @@
   place-content: center;
 
   color: white;
+}
+.multi-checkbox{
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+#multipleInput{
+  font-size: 1rem;
+  width: 1rem;
 }
 option{
   background-color: transparent;
@@ -49,6 +59,7 @@ option{
 
 .home-btn:hover{
     outline: 1px solid #04d9ff;
+    /* outline: 1px solid #32C983; */
     transform: scale(1.1);
 }
 
@@ -133,6 +144,13 @@ option{
   /* background: indigo; */
   background-color: #18191afb;
   /* background-color: transparent; */
+}
+
+.radio-group{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  font-size: 0.8rem;
 }
 @media only screen and (max-width:800px) {
   .App{

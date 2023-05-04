@@ -33,18 +33,18 @@ function App() {
       if(imageData[author]){
         randomNumber = Math.floor(Math.random()*imageData[author]?.length)
         console.log(author)
-        img = (author)? imageData[author][randomNumber] : "/src/assets/Kratos/1.jpg"; 
+        img = (author)? imageData[author][randomNumber] : "/src/assets/Unregistered-author/img2.jpg"; 
       }
       else{
         randomNumber = Math.floor(Math.random()*imageData["Unregistered-author"]?.length)
-        img = (author)? imageData["Unregistered-author"][randomNumber] : "/src/assets/Kratos/1.jpg"; 
+        img = (author)? imageData["Unregistered-author"][randomNumber] : "/src/assets/Unregistered-author/img2.jpg"; 
       }
       setBgImage(img)
       dispatch(setImage(img))
       const app = document.getElementById('App');
       app.style.backgroundImage = `url(${img})`;
     }
-  },[author])
+  },[quote])
   
   const resetAll = () => {
     dispatch(reset());
