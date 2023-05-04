@@ -32,7 +32,7 @@ const Signup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // alert(`Name: ${formData.name}, Email: ${formData.email}, Password: ${formData.password}`);
-    axios.post('http://localhost:3200/user/signup', 
+    axios.post(`${import.meta.env.VITE_SERVER_URL}/user/signup`, 
       formData
     ).then((response) => {
       if (response.data.status === 'ok') {

@@ -18,7 +18,7 @@ const AddQuote = () => {
         const app = document.getElementById('add-quote');
         app.style.backgroundImage = `url(${img})`;
         const currentUser = sessionStorage.getItem('username')
-        axios.post('http://localhost:3200/user/emotion', {
+        axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
             currentUser: currentUser
           })
           .then((response)=>{
@@ -37,7 +37,7 @@ const AddQuote = () => {
         e.preventDefault();
         const currentUser = sessionStorage.getItem('username');
 
-        axios.post('http://localhost:3200/user/quote', {
+        axios.post(`${import.meta.env.VITE_SERVER_URL}/user/quote`, {
             currentUser: currentUser,
             quote: quote,
             author: author,

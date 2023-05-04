@@ -18,7 +18,8 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
       // alert(`Name: ${formData.username}, Password: ${formData.password}`); 
-      axios.post('http://localhost:3200/user/login', 
+      console.log(process.env.VITE_SERVER_URL)
+      axios.post(`${import.meta.env.VITE_SERVER_URL}/user/login`, 
       formData
       ).then((response) => {
         const data = response.data;

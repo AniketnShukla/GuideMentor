@@ -13,7 +13,7 @@ const EmotionWheel = () => {
   const [userData, setUserData] = useState([]);
   const [dataCheck, setDataCheck] = useState(false);
 useEffect(()=>{
-  axios.post('http://localhost:3200/user/emotion', {
+  axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
     currentUser: currentUser
   })
   .then((response)=>{
