@@ -3,6 +3,7 @@
 }
 
 nav{
+
     color: white;
     width: var(--nav-width);
     height: 100%;
@@ -40,13 +41,16 @@ nav{
 } */
 
 .showNav{
-    transition:  475ms ease-in-out;
-    translate: 0rem;
+    /* transition:  475ms ease-in-out; */
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    transform: translate3d(0vw, 0, 0);
 }
 
 .hideNav{
-    transition:  475ms ease-in-out;
-    translate: var(--nav-width);
+    /* transition:  475ms ease-in-out; */
+    transition: transform .3s cubic-bezier(.5, .2, 0, 1);
+    transform: translate3d(var(--nav-width), 0, 0);
+    /* translate: var(--nav-width); */
 }
 
 nav .frozen{

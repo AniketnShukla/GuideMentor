@@ -20,14 +20,14 @@ if(user != null) {
   console.log(`Logged In ${user}`)
 }
 console.log('loggedin?')
-console.log(loggedIn)
+console.log(loggedIn);
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
-  <Route path="/" element={ loggedIn ? (<Navigate replace to ={"/home"} />
-) : ( <Navigate replace to ={"/start"} />)} />
+  <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
+          {/* <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} /> */}
           <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
@@ -35,8 +35,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/default" element={ loggedIn ? (<QuotePage />) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="/add" element=  { loggedIn ? (<AddQuote />) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="*" element={<Error404 />} />
-          <Route exact path="/default" element={<QuotePage />} />
-          <Route exact path="/add" element={<AddQuote />} />
         </Routes>
     </BrowserRouter>
       </Provider>

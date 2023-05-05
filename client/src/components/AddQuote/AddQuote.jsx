@@ -44,7 +44,16 @@ const AddQuote = () => {
             quote: quote,
             author: author,
             emotion: emotion
-    })
+        }).then(()=>{
+            alert('Quote added.')
+        }).catch((e)=>{
+            console.log(e)
+        })
+    /*******/
+    // if(!checkMultiple) {
+    //     navigate('/home');
+    // }
+        console.log(emotion)
         setQuote('')
         setAuthor('')
     }
@@ -131,8 +140,9 @@ const AddQuote = () => {
                 <option value="lust">Lust</option>
                 <option value="sad">Sad</option>
             </select> */}
-
-            <div className="multi-checkbox">
+{/* //MULTIPLE CHECK BOX FOR WHEN YOU IMPLEMENT NAVIGATING TO HOME ON SUBMIT, Currently doing so does not refetch the updated data, 
+IDEA. put the user Emotion Array in redux and dispatch and fetch it where required, can check */}
+            {/* <div className="multi-checkbox">
                 <label htmlFor="multipleInput">multiple inputs</label>
                 <input 
                     type="checkbox"
@@ -142,12 +152,8 @@ const AddQuote = () => {
                     value={author}
                     onChange={(e) => setCheckMultiple(!checkMultiple) } 
                     />
-            </div>
+            </div> */}
             <button type="submit" className='submit-btn' onClick={()=>{
-                if(!checkMultiple) {
-                    // window.location.href = '/'
-                    navigate('/home');
-                }
             }}>Submit</button>
         </form>
     </div>

@@ -12,6 +12,7 @@ import { setImage } from './features/bgImage/imageSlice'
 import imageData from './data/Images.js'
 import NavBar from './components/NavBar/NavBar'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay'
+import { setUserEmotions } from './features/emotions/emotionsSlice';
 
 function App() {
   const dispatch = useDispatch()
@@ -25,12 +26,24 @@ function App() {
   const freezeBackground = useSelector((state) => state.imageReducer.freezeBackground)
   // const image = useSelector((state) => state.imageReducer.image)
   const [bgImage, setBgImage] = useState('')
+  const currentUser = sessionStorage.getItem('username')
+  const [localEmotions, setLocalEmotions] = useState([]);
+  const [localUserData, setLocalUserData] = useState({});
+  // console.log(state);
+  const emotions = useSelector((state) => {
+    return state.emotionReducer.emotions;
+});
+  const userData = useSelector((state) => {
+    return state.emotionReducer.userData;
+});
   useEffect(()=>{
-    // console.log(imageData[author]?.length, 'effefct andat iamgedata')
-    // if(imageData[author] !== undefined){
-    let img;
-    let randomNumber;
-    if(!freezeBackground){
+    setLocalEmotions(emotions);
+    setLocalUserData(userData);
+  },[emotions, userData])
+  useEffect(()=>{
+  let img;
+  let randomNumber;
+  if(!freezeBackground){
       if(imageData[author]){
         randomNumber = Math.floor(Math.random()*imageData[author]?.length)
         // console.log(author)
@@ -46,7 +59,6 @@ function App() {
       app.style.backgroundImage = `url(${img})`;
     }
   },[quote])
-  
   const resetAll = () => {
     dispatch(reset());
     dispatch(setQuote(''));
@@ -55,16 +67,8 @@ function App() {
   return (
     <div className="App" id="App">
       <NavBar />
-      <EmotionWheel />
+      <EmotionWheel emotions={localEmotions} userData={localUserData}/>
       <QuoteDisplay />
-`
-      {/* <div className='prompt-input'>
-        <input type="text" placeholder='Enter message' />
-        <button>Enter</button>
-        <button onClick={()=> resetAll()}>Reset</button>
-      </div> */}
-
-
     </div>
   )
 }

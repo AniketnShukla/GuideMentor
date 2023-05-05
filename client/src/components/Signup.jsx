@@ -66,7 +66,7 @@ const Signup = () => {
             <span className="fa fa-user"></span>
             <input
               placeholder="username"
-              pattern="^[a-zA-Z0-9]{4,10}$"
+              pattern="^[a-zA-Z0-9]{4,20}$"
               title="Length should be 4-10, No special characters allowed"
               type="text"
               id="name"

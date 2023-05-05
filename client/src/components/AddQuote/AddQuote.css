@@ -167,6 +167,9 @@ option{
     margin-top: 6rem;
   }
   .form #quote{
-    width: 90%;
+    width: 100%;
+  }
+  .form #emotion{
+    width: 75%;
   }
 }
