@@ -36,8 +36,9 @@ const Signup = () => {
       formData
     ).then((response) => {
       if (response.data.status === 'ok') {
-        // window.location.href = '/login';
-        < Navigate replace to = "/login" />
+        window.location.href = '/login';
+        console.log('k');
+        // < Navigate replace to = {"/login"} />
       } 
       else{
         const errorMessage = response.data.message;
@@ -65,7 +66,7 @@ const Signup = () => {
             <input
               placeholder="username"
               pattern="^[a-zA-Z0-9]{4,10}$"
-              title="No special characters allowed"
+              title="Length should be 4-10, No special characters allowed"
               type="text"
               id="name"
               name="name"
