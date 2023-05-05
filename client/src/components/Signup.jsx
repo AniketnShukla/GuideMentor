@@ -36,7 +36,8 @@ const Signup = () => {
       formData
     ).then((response) => {
       if (response.data.status === 'ok') {
-        window.location.href = '/login';
+        // window.location.href = '/login';
+        navigate('/login');
         console.log('k');
         // < Navigate replace to = {"/login"} />
       } 

@@ -3,13 +3,15 @@ import React, { useState } from "react";
 import "./signup.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 // import logo from "../assets/logo.png";
 
 
 const Login = () => {
   //name can be username or email
     const [formData, setFormData] = useState({name: "",password: ""});
-  
+    const navigate = useNavigate();
     const handleChange = (event) => {
       //name can be username or email
       const { name, value } = event.target;
@@ -26,7 +28,9 @@ const Login = () => {
         const data = response.data;
         if(data.username){
           alert('Login Successful')
-          window.location.href = '/'
+          // window.location.href = '/'
+          navigate('/home');
+          console.log('kkk')
           sessionStorage.setItem('username', data.username)
         }
         else{

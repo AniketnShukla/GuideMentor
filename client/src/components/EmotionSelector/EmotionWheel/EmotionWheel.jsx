@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import emotions from '../../../data/currentmood.json'
 import EmotionCircle from '../EmotionCircle/EmotionCircle'
+import { Link, useNavigate } from "react-router-dom";
 import './emotionwheel.css'
 import axios from 'axios'
 
 
 const EmotionWheel = () => {
+  const navigate = useNavigate();
   const currentUser = sessionStorage.getItem('username')
   console.log(currentUser)
   const [emotions, setEmotions] = useState([]);
@@ -56,7 +58,11 @@ useEffect(()=>{
           ( circle )
           :
           // (<h2>L o a d i n g. . . . </h2>)
-          (<div className="add-quote-btn" onClick={()=>window.location.href = '/add'}>
+          (<div className="add-quote-btn" onClick={()=>{
+          // window.location.href = '/add'
+           navigate('/add');
+          }
+          }>
             Add Quotes
             </div>
           )

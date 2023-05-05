@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import './AddQuote.css'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img3 from "/src/assets/UnregisteredAuthor/img3.jpg";
 import axios from 'axios';
 const AddQuote = () => {
+    const navigate = useNavigate();
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
     const [emotion, setEmotion] = useState('');
@@ -144,7 +145,8 @@ const AddQuote = () => {
             </div>
             <button type="submit" className='submit-btn' onClick={()=>{
                 if(!checkMultiple) {
-                    window.location.href = '/'
+                    // window.location.href = '/'
+                    navigate('/home');
                 }
             }}>Submit</button>
         </form>
