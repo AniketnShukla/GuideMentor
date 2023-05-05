@@ -51,7 +51,8 @@ const Signup = () => {
 
   return (
 <div id="signup">
-        <p class="start_header">HeadStache</p>
+        {/* <p class="start_header">HeadStache</p> */}
+        <p class="start_header">Mentor</p>
       <div className="gate-form" >
         {/* <img src={logo} className="logo" /> */}
         {/* start_header classis in start.css */}

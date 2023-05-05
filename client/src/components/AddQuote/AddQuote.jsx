@@ -63,7 +63,7 @@ const AddQuote = () => {
                 value={quote}
                 onChange={(e) => setQuote(e.target.value) } 
             />
-            <label htmlFor="author">Author</label>
+            <label htmlFor="author">By</label>
             <input 
                 type="text"
                 id="author"

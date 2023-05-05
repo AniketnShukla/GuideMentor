@@ -13,6 +13,7 @@ const EmotionWheel = () => {
   const [userData, setUserData] = useState([]);
   const [dataCheck, setDataCheck] = useState(false);
 useEffect(()=>{
+
   axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
     currentUser: currentUser
   })
@@ -40,17 +41,22 @@ useEffect(()=>{
       />    
       ))
       )
+      if(userData?.emotionData?.length > 0){
+        setDataCheck(true);
+      }else{
+        setDataCheck(false);
+      }
   },[userData])
   // }
   return (
     <div className='emotionwheel'>
       <span>What do you feel</span>
         <div className="circle-wrapper">
-          {(userData?.emotionData != null) ? 
+          {(dataCheck) ? 
           ( circle )
           :
           // (<h2>L o a d i n g. . . . </h2>)
-          (<div className="emotioncircle" onClick={()=>window.location.href = '/add'}>
+          (<div className="add-quote-btn" onClick={()=>window.location.href = '/add'}>
             Add Quotes
             </div>
           )

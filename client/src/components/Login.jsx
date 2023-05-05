@@ -40,7 +40,8 @@ const Login = () => {
     }
   return (
    <div className="bg-img" id="signup">
-      <p class="start_header">HeadStache</p>
+      {/* <p class="start_header">HeadStache</p> */}
+      <p class="start_header">Mentor</p>
       <div className="gate-form">
         {/* start_header classis in start.css */}
         <br />

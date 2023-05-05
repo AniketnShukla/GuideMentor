@@ -52,7 +52,7 @@ const NavBar = () => {
               {/* //make a start page */}
                 <li>
                   <div className='add-btn'>
-              <Link to='/login' onClick={()=>{
+              <Link to='/start' onClick={()=>{
                 sessionStorage.removeItem('username')
               }}>
                     Logout

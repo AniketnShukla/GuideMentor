@@ -21,5 +21,17 @@
     gap: 3.5vw;
 }
 
-
-
+.add-quote-btn{
+    margin-top: 1rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: #343434;
+	-webkit-text-stroke-color: #1A1A1A;
+    transition: 275ms all ease-in-out;
+    font-size: 1rem;
+    text-transform: uppercase;
+	font-weight: 500;
+    cursor:pointer
+}
+.add-quote-btn:hover{
+    transform: scale(1.08);
+}

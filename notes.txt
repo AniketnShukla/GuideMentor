@@ -14,5 +14,6 @@
     and the username specificaly to fetch all the details to display, use jwt and make the login and signup process proper
     along with decoupling the username with the fetching of details, will be commenting out the backend email or user login
     implementation.
-13. server for render.com site name -> https://mentor-api.onrender.com
-https://mentor-n4ni-api.onrender.com/
+13. server for render.com site name -> https://mentor-markapi.onrender.com
+14. Add a randomiser for backgrounds on start page, signup and login pages (combine the randomiser into one or make a module?).
+15. Download more background images for start page and unregisteredAuthors
