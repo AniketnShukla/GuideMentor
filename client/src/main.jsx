@@ -14,6 +14,7 @@ import Start from './components/Start'
 
 let loggedIn = false;
 const user = sessionStorage.getItem('username')
+console.log(user)
 if(user) {
   loggedIn = true;
 }
