@@ -46,10 +46,14 @@ useEffect(()=>{
     <div className='emotionwheel'>
       <span>What do you feel</span>
         <div className="circle-wrapper">
-          {(circle) ? 
+          {(userData?.emotionData != null) ? 
           ( circle )
           :
-          (<h2>L o a d i n g. . . . </h2>)
+          // (<h2>L o a d i n g. . . . </h2>)
+          (<div className="emotioncircle" onClick={()=>window.location.href = '/add'}>
+            Add Quotes
+            </div>
+          )
           }
         </div>
     </div>
