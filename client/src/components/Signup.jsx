@@ -5,7 +5,7 @@ import images from './../data/Images'
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import logo from "../assets/logo.png";
-
+import { Navigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -36,7 +36,8 @@ const Signup = () => {
       formData
     ).then((response) => {
       if (response.data.status === 'ok') {
-        window.location.href = '/login';
+        // window.location.href = '/login';
+        < Navigate replace to = "/login" />
       } 
       else{
         const errorMessage = response.data.message;
