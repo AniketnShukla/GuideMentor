@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
-  <Route path="/" element={ loggedIn ? (<Navigate replace to ={"/start"} />
+  <Route path="/" element={ loggedIn ? (<Navigate replace to ={"/home"} />
 ) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           <Route exact path="/start" element={<Start />} />
