@@ -17,17 +17,13 @@ const user = sessionStorage.getItem('username')
 console.log(user)
 if(user != null) {
   loggedIn = true;
-}
-if(!user){
-    // user is not authenticated
-  <Navigate to="/login" />;
+  console.log(`Logged In ${user}`)
 }
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
           <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/login"} />)} />
           <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
