@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./signup.css";
 import axios from "axios";
 import images from './../data/Images'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import logo from "../assets/logo.png";
 
@@ -104,7 +104,7 @@ const Signup = () => {
           </div>
           <br />
           <div className="signup">
-            Have an account? <a href="/login">Login</a>!
+            Have an account? <Link to="/login">Login</Link>!
           </div>
         </form>
       </div>

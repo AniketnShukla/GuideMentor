@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import "./login.css";
 import "./signup.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // import logo from "../assets/logo.png";
 
 
@@ -77,7 +78,7 @@ const Login = () => {
           </div>
           <br />
           <div className="signup">
-            Don't have an account? <a href="/signup">Signup now</a>
+            Don't have an account? <Link to="/signup">Signup now</Link>
           </div>
         </form>
       </div>
