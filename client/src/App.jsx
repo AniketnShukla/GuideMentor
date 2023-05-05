@@ -33,11 +33,11 @@ function App() {
       if(imageData[author]){
         randomNumber = Math.floor(Math.random()*imageData[author]?.length)
         console.log(author)
-        img = (author)? imageData[author][randomNumber] : "/src/assets/Unregistered-author/img2.jpg"; 
+        img = (author)? imageData[author][randomNumber] : "/src/assets/UnregisteredAuthor/img2.jpg"; 
       }
       else{
-        randomNumber = Math.floor(Math.random()*imageData["Unregistered-author"]?.length)
-        img = (author)? imageData["Unregistered-author"][randomNumber] : "/src/assets/Unregistered-author/img2.jpg"; 
+        randomNumber = Math.floor(Math.random()*imageData["UnregisteredAuthor"]?.length)
+        img = (author)? imageData["UnregisteredAuthor"][randomNumber] : "/src/assets/UnregisteredAuthor/img2.jpg"; 
       }
       setBgImage(img)
       dispatch(setImage(img))

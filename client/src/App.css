@@ -16,7 +16,7 @@ body{
 }
 .App{
   height: 100vh; 
-  /* background-image: url  (/src/assets/Unregistered-author/img1.jpg); */
+  /* background-image: url  (/src/assets/UnregisteredAuthor/img1.jpg); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

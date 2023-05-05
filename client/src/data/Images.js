@@ -42,15 +42,15 @@ import imgDavidGoggins3 from './../assets/DavidGoggins/3.jpg'
 
 import imgJockoWillink from './../assets/JockoWillink/1.jpg'
 
-import imgUnregisteredAuthor1 from './../assets/Unregistered-Author/img1.jpg'
-import imgUnregisteredAuthor2 from './../assets/Unregistered-Author/img2.jpg'
-import imgUnregisteredAuthor3 from './../assets/Unregistered-Author/img3.jpg'
-import imgUnregisteredAuthor4 from './../assets/Unregistered-Author/img4.jpg'
-import imgUnregisteredAuthor5 from './../assets/Unregistered-Author/img5.jpg'
-import imgUnregisteredAuthor6 from './../assets/Unregistered-Author/img6.jpg'
-import imgUnregisteredAuthor7 from './../assets/Unregistered-Author/img7.jpg'
-import imgUnregisteredAuthor8 from './../assets/Unregistered-Author/img8.jpg'
-import imgUnregisteredAuthor9 from './../assets/Unregistered-Author/img9.jpg'
+import imgUnregisteredAuthor1 from './../assets/UnregisteredAuthor/img1.jpg'
+import imgUnregisteredAuthor2 from './../assets/UnregisteredAuthor/img2.jpg'
+import imgUnregisteredAuthor3 from './../assets/UnregisteredAuthor/img3.jpg'
+import imgUnregisteredAuthor4 from './../assets/UnregisteredAuthor/img4.jpg'
+import imgUnregisteredAuthor5 from './../assets/UnregisteredAuthor/img5.jpg'
+import imgUnregisteredAuthor6 from './../assets/UnregisteredAuthor/img6.jpg'
+import imgUnregisteredAuthor7 from './../assets/UnregisteredAuthor/img7.jpg'
+import imgUnregisteredAuthor8 from './../assets/UnregisteredAuthor/img8.jpg'
+import imgUnregisteredAuthor9 from './../assets/UnregisteredAuthor/img9.jpg'
 
 export default {
     "David Goggins":[
@@ -114,7 +114,7 @@ export default {
     "Jocko Willick":[
         imgJockoWillink,
     ],
-    "Unregistered-author":[
+    "UnregisteredAuthor":[
         imgUnregisteredAuthor1,
         imgUnregisteredAuthor2,
         imgUnregisteredAuthor3,

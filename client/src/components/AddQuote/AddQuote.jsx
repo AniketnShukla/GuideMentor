@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import './AddQuote.css'
 import { Link, Navigate } from 'react-router-dom';
+import img3 from "/src/assets/UnregisteredAuthor/img3.jpg";
 import axios from 'axios';
 const AddQuote = () => {
     const [quote, setQuote] = useState('');
@@ -12,7 +13,7 @@ const AddQuote = () => {
     const [radioEmotion, setRadioEmotion] = useState(null);
     let img = useSelector((state) => state.imageReducer.image)
     //img not updating when author not set check
-    if(!img) img = "/src/assets/Unregistered-author/img3.jpg"; 
+    if(!img) img = img3; 
 
     useEffect(() => {
         const app = document.getElementById('add-quote');

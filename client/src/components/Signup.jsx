@@ -15,9 +15,9 @@ const Signup = () => {
   console.log(img)
   // useEffect(() => {
   //   if(!img){
-  //     const size = images['Unregistered-author'].length
+  //     const size = images['UnregisteredAuthor'].length
   //     const randomNum = Math.floor( Math.random() * size);
-  //     img = images['Unregistered-author'][randomNum];
+  //     img = images['UnregisteredAuthor'][randomNum];
   //   }
   //   const app = document.getElementById('signup');
   //     app.style.backgroundImage = `url(${img})`;
