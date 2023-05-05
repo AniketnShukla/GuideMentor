@@ -17,3 +17,6 @@
 13. server for render.com site name -> https://mentor-markapi.onrender.com
 14. Add a randomiser for backgrounds on start page, signup and login pages (combine the randomiser into one or make a module?).
 15. Download more background images for start page and unregisteredAuthors
+
+
+WORK ON DELETING QUOTES AND EMOTIONS NEXT.
