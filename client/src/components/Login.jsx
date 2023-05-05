@@ -21,7 +21,7 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
       // alert(`Name: ${formData.username}, Password: ${formData.password}`); 
-      console.log(process.env.VITE_SERVER_URL)
+      // console.log(process.env.VITE_SERVER_URL)
       axios.post(`${import.meta.env.VITE_SERVER_URL}/user/login`, 
       formData
       ).then((response) => {
@@ -29,7 +29,7 @@ const Login = () => {
         if(data.username){
           alert('Login Successful')
           // window.location.href = '/'
-          navigate('/home');
+          navigate("/home");
           console.log('kkk')
           sessionStorage.setItem('username', data.username)
         }

@@ -18,7 +18,7 @@ function App() {
   const [count, setCount] = useState(0)
   const currentState = useSelector((state) => {
     return state.stateReducer.state
-  console.log(state);
+  // console.log(state);
   });
   const author = useSelector((state)=> state.quoteReducer.author)
   const quote = useSelector((state) => state.quoteReducer.quote)
@@ -33,7 +33,7 @@ function App() {
     if(!freezeBackground){
       if(imageData[author]){
         randomNumber = Math.floor(Math.random()*imageData[author]?.length)
-        console.log(author)
+        // console.log(author)
         img = (author)? imageData[author][randomNumber] : img2;
       }
       else{

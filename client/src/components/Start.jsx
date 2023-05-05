@@ -7,15 +7,15 @@ useEffect(()=>{
 },[])
   return (
     <div className='startPage'>
-        <section class="start">
-            {/* <p class="start_header">HeadStache</p> */}
-            <p class="start_header">Mentor</p>
-            <p class="small_header">Be the hand you seek for help.</p>
-            <h1 class="btn-group">
-                <Link to="/signup" class="btn">Signup</Link>
-                <Link to="/login" class="btn">Login</Link>
+        <section className="start">
+            {/* <p className="start_header">HeadStache</p> */}
+            <p className="start_header">Mentor</p>
+            <p className="small_header">Be the hand you seek for help.</p>
+            <h1 className="btn-group">
+                <Link to="/signup" className="btn">Signup</Link>
+                <Link to="/login" className="btn">Login</Link>
             </h1>
-            {/* <Link to="#" class="btn">get me out of here</Link> */}
+            {/* <Link to="#" className="btn">get me out of here</Link> */}
         </section>
     </div>
   )

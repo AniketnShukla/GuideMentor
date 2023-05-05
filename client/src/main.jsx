@@ -19,6 +19,8 @@ if(user != null) {
   loggedIn = true;
   console.log(`Logged In ${user}`)
 }
+console.log('loggedin?')
+console.log(loggedIn)
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
       <Provider store={ store }>
