@@ -15,8 +15,12 @@ import Start from './components/Start'
 let loggedIn = false;
 const user = sessionStorage.getItem('username')
 console.log(user)
-if(user) {
+if(user != null) {
   loggedIn = true;
+}
+if(!user){
+    // user is not authenticated
+  <Navigate to="/login" />;
 }
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>

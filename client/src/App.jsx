@@ -3,6 +3,7 @@ import './App.css'
 import EmotionWheel from './components/EmotionSelector/EmotionWheel/EmotionWheel'
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
+import img2 from "/src/assets/UnregisteredAuthor/img2.jpg";
 import { 
   reset 
 } from './features/emotion/currentStateSlice'
@@ -33,11 +34,11 @@ function App() {
       if(imageData[author]){
         randomNumber = Math.floor(Math.random()*imageData[author]?.length)
         console.log(author)
-        img = (author)? imageData[author][randomNumber] : "/src/assets/UnregisteredAuthor/img2.jpg"; 
+        img = (author)? imageData[author][randomNumber] : img2;
       }
       else{
         randomNumber = Math.floor(Math.random()*imageData["UnregisteredAuthor"]?.length)
-        img = (author)? imageData["UnregisteredAuthor"][randomNumber] : "/src/assets/UnregisteredAuthor/img2.jpg"; 
+        img = (author)? imageData["UnregisteredAuthor"][randomNumber] : img2;
       }
       setBgImage(img)
       dispatch(setImage(img))
