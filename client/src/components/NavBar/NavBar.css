@@ -2,8 +2,7 @@
     --nav-width: 10rem;
 }
 
-nav{
-
+#nav{
     color: white;
     width: var(--nav-width);
     height: 100%;
@@ -12,19 +11,22 @@ nav{
     /* border: 1px green solid; */
     transition:  375ms ease-in-out;
 
-    z-index: 99;
+    z-index: 10;
     background: rgb(0,0,0);
     background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(2,5,8,0.5354516806722689) 58%, rgba(40,40,40,0) 100%);
 }
 
 
 .navButton{
+    z-index: 100;
     position: absolute;
     transform: scale(1.3);
     top: 0.5rem;
     right: calc(var(--nav-width) + 0.5rem);
+    /* right: 0rem; */
     cursor: pointer;
-    transition:  375ms ease-in-out;
+    transition:  375ms all ease-in-out;
+    /* transition: transform .3s cubic-bezier(0, .52, 0, 1); */
     /* box-shadow: 0 8px 32px 0 rgba(2, 2, 2, 0.37); */
     /* backdrop-filter: blur( 1.5px ); */
     /* -webkit-backdrop-filter: blur( 1.5px ); */
@@ -42,14 +44,16 @@ nav{
 
 .showNav{
     /* transition:  475ms ease-in-out; */
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    transition: all .3s cubic-bezier(0, .52, 0, 1);
     transform: translate3d(0vw, 0, 0);
+    /* overflow: hidden; */
 }
 
 .hideNav{
+    /* display: none; */
     /* transition:  475ms ease-in-out; */
-    transition: transform .3s cubic-bezier(.5, .2, 0, 1);
-    transform: translate3d(var(--nav-width), 0, 0);
+        transition:all .3s cubic-bezier(.5, .2, 0, 1);
+        transform: translate3d(var(--nav-width), 0, 0);
     /* translate: var(--nav-width); */
 }
 

@@ -28,6 +28,7 @@ const NavBar = () => {
   }
   
   return (
+    <>
         <nav id="nav" className={(isActive) ? "showNav": "hideNav"}>
           <div className="navButton" onClick={toggleNav}>
             <b>{(isActive) ? <VscClose /> : <VscMenu />}</b>
@@ -65,6 +66,7 @@ const NavBar = () => {
               </div>
             </ul>
         </nav>
+    </>
   )
 }
 

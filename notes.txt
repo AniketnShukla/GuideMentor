@@ -23,5 +23,11 @@ Fix
 WORK ON DELETING QUOTES AND EMOTIONS NEXT.
 16.password check doesnt work dumbass Wow
 
+Things to learn:
+1.Standard Signup, Login.
+2.Proper Project Planning
+3.Conditional client side rendering, properly.
+4.
+
 Enhancements
-1.
+1. 
