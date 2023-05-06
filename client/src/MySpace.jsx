@@ -3,7 +3,6 @@ import './MySpace.css'
 import EmotionWheel from './components/EmotionSelector/EmotionWheel/EmotionWheel'
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
-import img2 from "/src/assets/UnregisteredAuthor/img2.jpg";
 import { 
   reset 
 } from './features/emotion/currentStateSlice'

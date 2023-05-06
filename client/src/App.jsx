@@ -3,7 +3,6 @@ import './App.css'
 import EmotionWheel from './components/EmotionSelector/EmotionWheel/EmotionWheel'
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
-import img2 from "/src/assets/UnregisteredAuthor/img2.jpg";
 import { 
   reset 
 } from './features/emotion/currentStateSlice'
@@ -42,34 +41,37 @@ function App() {
     return state.imageReducer.image;
 });
 useEffect(()=>{
-  const getPresetEmotions = async() => {   
+  const getPresetData = async() => {   
     // getPresetQuotes
-    await axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetEmotions`)
+    Promise.all([
+      axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetEmotions`),
+      axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetQuotes`)
+    ])
     .then((response)=>{
-          console.log(response.data); 
-          setLocalEmotions(response.data?.presetEmotions)
+          console.log(response[0].data); 
+          setLocalEmotions(response[0].data?.presetEmotions)
           // dispatch(setUserData(response.data))
           // dispatch(setUserEmotions(response.data))
+          console.log(response[1].data);
+          setLocalUserData(response[1].data)
         })
         .catch((e)=>{
           console.log(e);
+          if (e.response) {
+            //response status is an e code
+            console.log(e.response.status);
+          }
+          else if (e.request) {
+            //response not received though the request was sent
+            console.log(e.request);
+          }
+          else {
+            //an e occurred when setting up the request
+            console.log(e.message);
+          }
         })
-  }
-  const getPresetQuotes = async() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetQuotes`)
-    .then((response)=>{
-      console.log(response.data);
-      setLocalUserData(response.data)
-    // dispatch(setUserData(response.data))
-    // dispatch(setUserEmotions(response.data))
-  })
-  .catch((e)=>{
-    console.log(e);
-  })
-  }
-
-  getPresetEmotions();
-  getPresetQuotes();
+      }
+  getPresetData();
 },[])
 useEffect(()=>{
   if(localEmotions?.length > 0 && Object.keys(localUserData).length !== 0){
