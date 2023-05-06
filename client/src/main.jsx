@@ -12,15 +12,15 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Start from './components/Start'
 
-let loggedIn = false;
-const user = sessionStorage.getItem('username')
-console.log(user)
-if(user != null) {
-  loggedIn = true;
-  console.log(`Logged In ${user}`)
-}
-console.log('loggedin?')
-console.log(loggedIn);
+// let loggedIn = false;
+// // const user = sessionStorage.getItem('username')
+// // console.log(user)
+// // if(user != null) {
+// //   loggedIn = true;
+// //   console.log(`Logged In ${user}`)
+// // }
+// console.log('loggedin?')
+// console.log(loggedIn);
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
       <Provider store={ store }>
