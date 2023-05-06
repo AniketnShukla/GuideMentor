@@ -78,6 +78,7 @@ body{
     overflow: hidden;
   }
   .App{
+    overflow: hidden;
     display: relative;
     height: 100svh;
     background-size: cover;
