@@ -27,6 +27,7 @@ const Login = () => {
       ).then((response) => {
         const data = response.data;
         if(data.username){
+          console.log(data)
           alert('Login Successful')
           // window.location.href = '/'
           sessionStorage.setItem('username', data.username)

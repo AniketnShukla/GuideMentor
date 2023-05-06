@@ -26,14 +26,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
-  <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
-          {/* <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} /> */}
+  {/* <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
           <Route path="/default" element={ loggedIn ? (<QuotePage />) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="/add" element=  { loggedIn ? (<AddQuote />) : ( <Navigate replace to ={"/start"} />)} />
+          <Route path="*" element={<Error404 />} /> */}
+          <Route path="/" element= {<App />} />
+          <Route path="/home" element={ <App />} />
+          <Route exact path="/start" element={<Start />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route path="/default" element={ <QuotePage />} />
+          <Route path="/add" element=  { <AddQuote />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
     </BrowserRouter>

@@ -1,3 +1,4 @@
+Fix
 0.Implement insertion of emotion in user emotionDaata array
 1.For New authors, add a folder of warrior esque images, (knights, duels, etc)
 2.Implement deletion of quote
@@ -20,3 +21,7 @@
 
 
 WORK ON DELETING QUOTES AND EMOTIONS NEXT.
+16.password check doesnt work dumbass Wow
+
+Enhancements
+1.

@@ -226,11 +226,10 @@ const loginUser = asyncHandler(async(req, res) => {
     //     password: password
     // })
     const userDB = User.findOne({
-        username: name,
-        password: password
+        username: name
     })
 
-    console.log(userDB);
+    // console.log(userDB);
     if(userDB){
     //     const token = jwt.sign({
     //         username: user.username,
