@@ -44,8 +44,8 @@ useEffect(()=>{
   const getPresetData = async() => {   
     // getPresetQuotes
     Promise.all([
-      axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetEmotions`),
-      axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetQuotes`)
+      axios.post(`${import.meta.env.VITE_SERVER_URL}/preset/presetEmotions`),
+      axios.post(`${import.meta.env.VITE_SERVER_URL}/preset/presetQuotes`)
     ])
     .then((response)=>{
           console.log(response[0].data); 

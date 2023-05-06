@@ -3,9 +3,9 @@ const path = require('path')
 const router = express.Router()
 const presetDataController = require('../controllers/presetDataController')
 router.route('/presetEmotions')
-    .get(presetDataController.getPresetEmotions)
+    .post(presetDataController.getPresetEmotions)
 
 router.route('/presetQuotes')
-    .get(presetDataController.getPresetQuotes)
+    .post(presetDataController.getPresetQuotes)
 
 module.exports = router
