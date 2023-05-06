@@ -8,24 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 const EmotionWheel = (props) => {
-  const [emotions, setEmotions] = useState([]);
-  const [userData, setUserData] = useState([]);
+  const [emotions, setEmotions] = useState(props.emotions);
+  const [userData, setUserData] = useState(props.userData);
   const dispatch = useDispatch();
-  useEffect(()=>{
-    axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
-      currentUser: currentUser
-    })
-    .then((response)=>{
-      console.log(response.data);
-      setUserData(response.data)
-      setEmotions(response.data?.emotionData)
-      // dispatch(setUserData(response.data))
-      // dispatch(setUserEmotions(response.data))
-    },[])
-    .catch((e)=>{
-      console.log(e);
-    })
-  },[])
+ 
   // console.log(state);
 //   const emotions = useSelector((state) => {
 //     return state.emotionReducer.emotions;
@@ -46,18 +32,18 @@ const currentUser = sessionStorage.getItem('username')
   const [dataCheck, setDataCheck] = useState(false);
     let emotionQuoteArray;
   useEffect(()=>{
-    // console.log(userData);
-    (userData?.quoteData) ? emotionQuoteArray = userData.quoteData.filter((quote) => quote.emotion === 'sad' ) : []
+    console.log(userData);
+    (typeof userData === Array) ? emotionQuoteArray = userData?.filter((quote) => quote.emotion === 'sad' ) : []
     setCircle(emotions.map((emotion, index) => (
       <EmotionCircle 
       key = { index }
       emotion = { emotion }
       // quotes = { emotionQuoteArray }
-      quotes = { userData.quoteData.filter((quote)=> quote.emotion === emotion)}
+      quotes = { userData.filter((quote)=> quote.emotion === emotion)}
       />    
       ))
       )
-      if(userData?.emotionData?.length > 0){
+      if(emotions.length > 0){
         setDataCheck(true);
       }else{
         setDataCheck(false);

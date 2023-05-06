@@ -11,6 +11,7 @@ import Error404 from './components/Error404'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Start from './components/Start'
+import MySpace from './MySpace'
 
 // let loggedIn = false;
 // // const user = sessionStorage.getItem('username')
@@ -26,9 +27,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
+          {/* *************TEMPORARY CHANGE *************change myspace for root path to app because app is home */}
           <Route path="/" element={ sessionStorage.getItem('username') ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           {/* <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} /> */}
-          <Route path="/home" element={<App />}/>
+          <Route path="/home" element={ sessionStorage.getItem('username') ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
+          <Route path="/my-space" element={ sessionStorage.getItem('username') ? (<MySpace />) : ( <Navigate replace to ={"/start"} />)} />
           <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />

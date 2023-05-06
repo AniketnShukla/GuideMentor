@@ -43,14 +43,29 @@ const NavBar = () => {
               </div>
               <div className='add-btn'>
                 <li>
+                  <Link to='/home' >
+                    Home
+                  </Link>
+                </li>
+              </div>
+              <div className='add-btn'>
+                <li>
+                  <Link to='/my-space' >
+                    My Space
+                  </Link>
+                </li>
+              </div>
+              <div className='add-btn'>
+                <li>
                   <Link to='/add' >
                     Add
                   </Link>
                 </li>
               </div>
-                <li>
-                </li>
-              {/* //make a start page */}
+              {/* </div> */}
+              <div onClick={toggleFreezeBg} className={(isFrozen) ? "frozen add-btn": "notFrozen add-btn"}>
+              <li>FreezeBg</li>
+              </div>
                 <li>
                   <div className='add-btn'>
               <Link to='/start' onClick={()=>{
@@ -60,10 +75,6 @@ const NavBar = () => {
               </Link>
                   </div>
                 </li>
-              {/* </div> */}
-              <div onClick={toggleFreezeBg} className={(isFrozen) ? "frozen add-btn": "notFrozen add-btn"}>
-              <li>FreezeBg</li>
-              </div>
             </ul>
         </nav>
     </>

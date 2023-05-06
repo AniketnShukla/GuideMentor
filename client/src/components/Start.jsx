@@ -13,7 +13,7 @@ useEffect(()=>{
             <p className="small_header">Be the hand you seek for help.</p>
             <h1 className="btn-group">
                 <Link to="/signup" className="btn">Signup</Link>
-                <Link to="/login" className="btn">Login</Link>
+                <Link to={(sessionStorage.getItem('username')) ? "/home" : "/login" } className="btn">Login</Link>
             </h1>
             {/* <Link to="#" className="btn">get me out of here</Link> */}
         </section>

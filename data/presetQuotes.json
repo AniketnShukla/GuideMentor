@@ -1,0 +1,638 @@
+[
+        {
+            "quote": "The only thing we have to fear is fear itself.",
+            "author": "Franklin D. Roosevelt",
+            "emotion": "fear",
+            "secondary_emotion": "Anxiety"
+        },
+        {
+            "quote": "Do the thing you fear and the death of fear is certain.",
+            "author": "Ralph Waldo Emerson",
+            "emotion": "fear",
+            "secondary_emotion": "Dread"
+        },
+        {
+            "quote": "I learned that courage was not the absence of fear, but the triumph over it.",
+            "author": "Nelson Mandela",
+            "emotion": "fear",
+            "secondary_emotion": "Apprehension"
+        },
+        {
+            "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            "author": "Nelson Mandela",
+            "emotion": "fear",
+            "secondary_emotion": "Panic"
+        },
+        {
+            "quote": "He who is not everyday conquering some fear has not learned the secret of life.",
+            "author": "Ralph Waldo Emerson",
+            "emotion": "fear",
+            "secondary_emotion": "Nervousness"
+        },
+        {
+            "quote": "The only way to do it is to do it.",
+            "author": "Amelia Earhart",
+            "emotion": "fear",
+            "secondary_emotion": "Hesitation"
+        },
+        {
+            "quote": "Fear is the path to the dark side. Fear leads to anger; anger leads to hate; hate leads to suffering.",
+            "author": "Yoda",
+            "emotion": "fear",
+            "secondary_emotion": "Anger"
+        },
+        {
+            "quote": "Fear makes the wolf bigger than he is.",
+            "author": "German Proverb",
+            "emotion": "fear",
+            "secondary_emotion": "Exaggeration"
+        },
+        {
+            "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            "author": "Nelson Mandela",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "resilience"
+        },
+        {
+            "quote": "If you want to conquer the anxiety of life, live in the moment, live in the breath.",
+            "author": "Amit Ray",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "anxiety"
+        },
+        {
+            "quote": "You don’t have to see the whole staircase, just take the first step.",
+            "author": "Martin Luther King Jr.",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "procrastination"
+        },
+        {
+            "quote": "The secret of getting ahead is getting started.",
+            "author": "Mark Twain",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "procrastination"
+        },
+        {
+            "quote": "We may encounter many defeats but we must not be defeated.",
+            "author": "Maya Angelou",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "resilience"
+        },
+        {
+            "quote": "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+            "author": "Zig Ziglar",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "self-doubt"
+        },
+        {
+            "quote": "I have not failed. I've just found 10,000 ways that won't work.",
+            "author": "Thomas Edison",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "persistence"
+        },
+        {
+            "quote": "Believe you can and you're halfway there.",
+            "author": "Theodore Roosevelt",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "self-doubt"
+        },
+        {
+            "quote": "It does not matter how slowly you go as long as you do not stop.",
+            "author": "Confucius",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "persistence"
+        },
+        {
+            "quote": "The best way to predict your future is to create it.",
+            "author": "Abraham Lincoln",
+            "emotion": "overwhelmed",
+            "secondary_emotion": "anxiety"
+        },
+        {
+            "quote": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+            "author": "Christian D. Larson",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "You have within you right now, everything you need to deal with whatever the world can throw at you.",
+            "author": "Brian Tracy",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "Don't let others tell you what you can't do. Don't let the limitations of others limit your vision. If you can remove your self-doubt and believe in yourself, you can achieve what you never thought possible.",
+            "author": "Roy T. Bennett",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "The way you treat yourself sets the standard for others.",
+            "author": "Dr. Sonya Friedman",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-acceptance"
+        },
+        {
+            "quote": "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
+            "author": "Steve Jobs",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-assurance"
+        },
+        {
+            "quote": "Believing in yourself is not a one-time event. It's a continuous process.",
+            "author": "Unknown",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "You are the only person on earth who can use your ability.",
+            "author": "Zig Ziglar",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "Accept who you are; and revel in it.",
+            "author": "Mitch Albom",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-acceptance"
+        },
+        {
+            "quote": "The moment you doubt whether you can fly, you cease forever to be able to do it.",
+            "author": "J.M. Barrie",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "Do not let what you cannot do interfere with what you can do.",
+            "author": "John Wooden",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "The most powerful relationship you will ever have is the relationship with yourself.",
+            "author": "Steve Maraboli",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-acceptance"
+        },
+        {
+            "quote": "Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got this.",
+            "author": "Chantal Sutherland",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "You are never too old to set another goal or to dream a new dream.",
+            "author": "C.S. Lewis",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-assurance"
+        },
+        {
+            "quote": "The first step towards success is taken when you refuse to be a captive of the environment in which you first find yourself.",
+            "author": "Mark Caine",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "You are not a drop in the ocean. You are the entire ocean in a drop.",
+            "author": "Rumi",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-acceptance"
+        },
+        {
+            "quote": "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.",
+            "author": "Dr. Seuss",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "The best way to gain self-confidence is to do what you are afraid to do.",
+            "author": "Swati Sharma",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "When you are content to be simply yourself and don't compare or compete, everybody will respect you.",
+            "author": "Lao Tzu",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-acceptance"
+        },
+        {
+            "quote": "You are braver than you believe, stronger than you seem, and smarter than you think.",
+            "author": "A.A. Milne",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-confidence"
+        },
+        {
+            "quote": "Believe you can and you're halfway there.",
+            "author": "Theodore Roosevelt",
+            "emotion": "insecure",
+            "secondary_emotion": "Self-efficacy"
+        },
+        {
+            "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+            "author": "Mark Twain",
+            "emotion": "angry",
+            "secondary_emotion": "Forgiveness"
+        },
+        {
+            "quote": "For every minute you remain angry, you give up sixty seconds of peace of mind.",
+            "author": "Ralph Waldo Emerson",
+            "emotion": "angry",
+            "secondary_emotion": "Peace"
+        },
+        {
+            "quote": "Holding onto anger is like drinking poison and expecting the other person to die.",
+            "author": "Buddha",
+            "emotion": "angry",
+            "secondary_emotion": "Letting go"
+        },
+        {
+            "quote": "Speak when you are angry and you will make the best speech you will ever regret.",
+            "author": "Ambrose Bierce",
+            "emotion": "angry",
+            "secondary_emotion": "Regret"
+        },
+        {
+            "quote": "Anybody can become angry – that is easy, but to be angry with the right person and to the right degree and at the right time and for the right purpose, and in the right way – that is not within everybody’s power and is not easy.",
+            "author": "Aristotle",
+            "emotion": "angry",
+            "secondary_emotion": "Self-control"
+        },
+        {
+            "quote": "The best fighter is never angry.",
+            "author": "Lao Tzu",
+            "emotion": "angry",
+            "secondary_emotion": "Calm"
+        },
+        {
+            "quote": "You will not be punished for your anger, you will be punished by your anger.",
+            "author": "Buddha",
+            "emotion": "angry",
+            "secondary_emotion": "Consequence"
+        },
+        {
+            "quote": "Anger is often more hurtful than the injury that caused it.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Compassion"
+        },
+        {
+            "quote": "Anger makes you smaller, while forgiveness forces you to grow beyond what you were.",
+            "author": "Cherie Carter-Scott",
+            "emotion": "angry",
+            "secondary_emotion": "Forgiveness"
+        },
+        {
+            "quote": "Anger, resentment and jealousy doesn't change the heart of others-- it only changes yours.",
+            "author": "Shannon Alder",
+            "emotion": "angry",
+            "secondary_emotion": "Compassion"
+        },
+        {
+            "quote": "Anger is nothing more than an outward expression of hurt, fear and frustration.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Empathy"
+        },
+        {
+            "quote": "Anger is often a mask for other emotions such as fear, sadness, and frustration.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Self-awareness"
+        },
+        {
+            "quote": "Anger is a signal, and one worth listening to.",
+            "author": "Harriet Lerner",
+            "emotion": "angry",
+            "secondary_emotion": "Self-awareness"
+        },
+        {
+            "quote": "Anger is a feeling, not a behavior.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Behavior management"
+        },
+        {
+            "quote": "Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured.",
+            "author": "Mark Twain",
+            "emotion": "angry",
+            "secondary_emotion": "Forgiveness"
+        },
+        {
+            "quote": "Anger and intolerance are the enemies of correct understanding.",
+            "author": "Mahatma Gandhi",
+            "emotion": "angry",
+            "secondary_emotion": "Tolerance"
+        },
+        {
+            "quote": "It is wise to direct your anger towards problems – not people; to focus your energies on answers – not excuses.",
+            "author": "William Arthur Ward",
+            "emotion": "angry",
+            "secondary_emotion": "Problem-solving"
+        },
+        {
+            "quote": "Anger is a natural response to feelings of hurt, betrayal, and embarrassment, but it’s important to recognize that anger can also be a defense mechanism.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Defense mechanism"
+        },
+        {
+            "quote": "Anger is a wind which blows out the lamp of the mind.",
+            "author": "Robert Green Ingersoll",
+            "emotion": "angry",
+            "secondary_emotion": "Clarity"
+        },
+        {
+            "quote": "Anger is often a sign of love.",
+            "author": "Unknown",
+            "emotion": "angry",
+            "secondary_emotion": "Love"
+        },
+        {
+            "quote": "Don't watch the clock; do what it does. Keep going.",
+            "author": "Sam Levenson",
+            "emotion": "frustrated",
+            "secondary_emotion": "Motivation"
+        },
+        {
+            "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "author": "Winston Churchill",
+            "emotion": "frustrated",
+            "secondary_emotion": "Perseverance"
+        },
+        {
+            "quote": "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",
+            "author": "Henry Ford",
+            "emotion": "frustrated",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.",
+            "author": "Steve Jobs",
+            "emotion": "frustrated",
+            "secondary_emotion": "Passion"
+        },
+        {
+            "quote": "Our greatest glory is not in never falling, but in rising every time we fall.",
+            "author": "Confucius",
+            "emotion": "frustrated",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+            "author": "Christian D. Larson",
+            "emotion": "frustrated",
+            "secondary_emotion": "Confidence"
+        },
+        {
+            "quote": "Challenges are what make life interesting and overcoming them is what makes life meaningful.",
+            "author": "Joshua J. Marine",
+            "emotion": "frustrated",
+            "secondary_emotion": "Perseverance"
+        },
+        {
+            "quote": "I have not failed. I've just found 10,000 ways that won't work.",
+            "author": "Thomas Edison",
+            "emotion": "frustrated",
+            "secondary_emotion": "Perseverance"
+        },
+        {
+            "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            "author": "Nelson Mandela",
+            "emotion": "frustrated",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "You miss 100% of the shots you don't take.",
+            "author": "Wayne Gretzky",
+            "emotion": "frustrated",
+            "secondary_emotion": "Motivation"
+        },
+        {
+            "quote": "The only way to get through pain is to go through it.",
+            "author": "Unknown",
+            "emotion": "sad",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "The best way out is always through.",
+            "author": "Robert Frost",
+            "emotion": "sad",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "Sadness flies away on the wings of time.",
+            "author": "Jean de La Fontaine",
+            "emotion": "sad",
+            "secondary_emotion": "Hope"
+        },
+        {
+            "quote": "Tears are words that need to be written.",
+            "author": "Paulo Coelho",
+            "emotion": "sad",
+            "secondary_emotion": "Expression"
+        },
+        {
+            "quote": "We must embrace pain and burn it as fuel for our journey.",
+            "author": "Kenji Miyazawa",
+            "emotion": "sad",
+            "secondary_emotion": "Resilience"
+        },
+        {
+            "quote": "The pain you feel today is the strength you feel tomorrow.",
+            "author": "Unknown",
+            "emotion": "sad",
+            "secondary_emotion": "Hope"
+        },
+        {
+            "quote": "The only way to do great work is to love what you do.",
+            "author": "Steve Jobs",
+            "emotion": "lonely",
+            "secondary_emotion": "Motivation"
+        },
+        {
+            "quote": "You, yourself, as much as anybody in the entire universe, deserve your love and affection.",
+            "author": "Buddha",
+            "emotion": "lonely",
+            "secondary_emotion": "Self-Love"
+        },
+        {
+            "quote": "You are never alone. You are eternally connected with everyone.",
+            "author": "Amit Ray",
+            "emotion": "lonely",
+            "secondary_emotion": "Connection"
+        },
+        {
+            "quote": "The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.",
+            "author": "William James",
+            "emotion": "lonely",
+            "secondary_emotion": "Self-Improvement"
+        },
+        {
+            "quote": "The most important relationship in your life is the relationship you have with yourself. Because no matter what happens, you will always be with yourself.",
+            "author": "Diane Von Furstenberg",
+            "emotion": "lonely",
+            "secondary_emotion": "Self-Love"
+        },
+        {
+            "quote": "It is better to be alone than in bad company.",
+            "author": "George Washington",
+            "emotion": "lonely",
+            "secondary_emotion": "Self-Respect"
+        },
+        {
+            "quote": "The greatest thing in the world is to know how to belong to oneself.",
+            "author": "Michel de Montaigne",
+            "emotion": "lonely",
+            "secondary_emotion": "Self-Discovery"
+        },
+        {
+            "quote": "Comparison is the thief of joy.",
+            "author": "Theodore Roosevelt",
+            "emotion": "jealous",
+            "secondary_emotion": "Contentment"
+        },
+        {
+            "quote": "Envy is a waste of time.",
+            "author": "Unknown",
+            "emotion": "jealous",
+            "secondary_emotion": "Time Management"
+        },
+        {
+            "quote": "The grass is always greener on the other side of the fence.",
+            "author": "Proverb",
+            "emotion": "jealous",
+            "secondary_emotion": "Gratitude"
+        },
+        {
+            "quote": "Don't waste your time on jealousy. Sometimes you're ahead, sometimes you're behind.",
+            "author": "Mary Schmich",
+            "emotion": "jealous",
+            "secondary_emotion": "Perspective"
+        },
+        {
+            "quote": "Jealousy is a disease, love is a healthy condition. The immature mind often mistakes one for the other, or assumes that the greater the love, the greater the jealousy - in fact, they are almost incompatible; one emotion hardly leaves room for the other.",
+            "author": "Robert A. Heinlein",
+            "emotion": "jealous",
+            "secondary_emotion": "Love"
+        },
+        {
+            "quote": "Believe you can and you're halfway there.",
+            "author": "Theodore Roosevelt",
+            "emotion": "lacking motivation",
+            "secondary_emotion": "Self-Belief"
+        },
+        {
+            "quote": "You miss 100% of the shots you don't take.",
+            "author": "Wayne Gretzky",
+            "emotion": "lacking motivation",
+            "secondary_emotion": "Risk-Taking"
+        },
+        {
+            "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+            "author": "Winston Churchill",
+            "emotion": "lacking motivation",
+            "secondary_emotion": "Perseverance"
+        },
+        {
+            "quote": "The biggest adventure you can ever take is to live the life of your dreams.",
+            "author": "Oprah Winfrey",
+            "emotion": "lacking motivation",
+            "secondary_emotion": "Adventure"
+        },
+        {
+            "quote": "The only way to do great work is to love what you do.",
+            "author": "Steve Jobs",
+            "emotion": "lacking motivation",
+            "secondary_emotion": "Passion"
+        },
+        {
+        "quote": "You don't have to be great to start, but you have to start to be great.",
+        "author": "Zig Ziglar",
+        "emotion": "procrastinating",
+        "secondary_emotion": "Motivation"
+        },
+        {
+        "quote": "The best way to get something done is to begin.",
+        "author": "Unknown",
+        "emotion": "procrastinating",
+        "secondary_emotion": "Initiative"
+        },
+        {
+        "quote": "The secret of getting ahead is getting started.",
+        "author": "Mark Twain",
+        "emotion": "procrastinating",
+        "secondary_emotion": "Progress"
+        },
+        {
+        "quote": "Procrastination is the thief of time.",
+        "author": "Edward Young",
+        "emotion": "procrastinating",
+        "secondary_emotion": "Time Management"
+        },
+        {
+        "quote": "Do it now. Sometimes 'later' becomes 'never'.",
+        "author": "Unknown",
+        "emotion": "procrastinating",
+        "secondary_emotion": "Urgency"
+        },
+        {
+            "quote": "Every day may not be good, but there's something good in every day.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "negative thinking"
+        },
+        {
+            "quote": "It's okay to not be okay.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "self-doubt"
+        },
+        {
+            "quote": "Storms don't last forever.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "despair"
+        },
+        {
+            "quote": "You are stronger than you think.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "doubt"
+        },
+        {
+            "quote": "The sun will rise and we will try again.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "disappointment"
+        },
+        {
+            "quote": "You don't have to be perfect to be amazing.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "self-criticism"
+        },
+        {
+            "quote": "It's okay to take a break.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "overwhelm"
+        },
+        {
+            "quote": "Hope is a powerful thing. Some say it's a different breed of magic altogether.",
+            "author": "Stephanie Garber",
+            "emotion": "gloomy",
+            "secondary_emotion": "hopelessness"
+        },
+        {
+            "quote": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+            "author": "Christian D. Larson",
+            "emotion": "gloomy",
+            "secondary_emotion": "self-doubt"
+        },
+        {
+            "quote": "You are not alone in this fight. We are all in this together.",
+            "author": "Unknown",
+            "emotion": "gloomy",
+            "secondary_emotion": "loneliness"
+        }         
+]

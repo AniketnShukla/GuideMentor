@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './MySpace.css'
 import EmotionWheel from './components/EmotionSelector/EmotionWheel/EmotionWheel'
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,7 +14,8 @@ import NavBar from './components/NavBar/NavBar'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay'
 import { setUserEmotions } from './features/emotions/emotionsSlice';
 
-function App() {
+function MySpace() {
+
   const dispatch = useDispatch()
   const [count, setCount] = useState(0)
   const currentState = useSelector((state) => {
@@ -31,7 +32,6 @@ function App() {
   const [localUserData, setLocalUserData] = useState({});
   const [loading, setLoading] = useState(true);
   console.log('state');
-
 //   const emotions = useSelector((state) => {
 //     return state.emotionReducer.emotions;
 // });
@@ -42,41 +42,30 @@ function App() {
     return state.imageReducer.image;
 });
 useEffect(()=>{
-  const getPresetEmotions = async() => {   
-    // getPresetQuotes
-    await axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetEmotions`)
-    .then((response)=>{
-          console.log(response.data); 
-          setLocalEmotions(response.data?.presetEmotions)
-          // dispatch(setUserData(response.data))
-          // dispatch(setUserEmotions(response.data))
-        })
-        .catch((e)=>{
-          console.log(e);
-        })
-  }
-  const getPresetQuotes = async() => {
-    axios.get(`${import.meta.env.VITE_SERVER_URL}/preset/presetQuotes`)
-    .then((response)=>{
-      console.log(response.data);
-      setLocalUserData(response.data)
-    // dispatch(setUserData(response.data))
-    // dispatch(setUserEmotions(response.data))
-  })
-  .catch((e)=>{
-    console.log(e);
-  })
-  }
-
-  getPresetEmotions();
-  getPresetQuotes();
-},[])
-useEffect(()=>{
-  if(localEmotions?.length > 0 && Object.keys(localUserData).length !== 0){
-    console.log(localUserData);
-      setLoading(false);
-  }
-},[localEmotions, localUserData])
+  //userdata is userquotedata
+        const getUserData = async() => {   
+            axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
+                currentUser: currentUser
+            })
+            .then((response)=>{
+                console.log(response.data?.quoteData);
+                setLocalUserData(response.data?.quoteData)
+                setLocalEmotions(response.data?.emotionData)
+                // dispatch(setUserData(response.data))
+                // dispatch(setUserEmotions(response.data))
+            })
+            .catch((e)=>{
+                console.log(e);
+            })
+        }
+        getUserData();
+  },[])
+  useEffect(()=>{
+    if(localEmotions?.length > 0 && Object.keys(localUserData).length !== 0){
+      console.log(localEmotions);
+        setLoading(false);
+    }
+  },[localEmotions, localUserData])
   useEffect(()=>{
   let img;
   let randomNumber;
@@ -93,8 +82,8 @@ useEffect(()=>{
       }
       setBgImage(img)
       dispatch(setImage(img))
-      const app = document.getElementById('App');
-      app.style.backgroundImage = `url(${img})`;
+      const MySpace = document.getElementById('MySpace');
+      MySpace.style.backgroundImage = `url(${img})`;
     }
   },[quote])
   const resetAll = () => {
@@ -103,12 +92,14 @@ useEffect(()=>{
   }
   // const emotions = [...new Set(data.map(( object ) => object.emotion))];
   return (
-    <div className="App" id="App">
+    <div className="MySpace" id="MySpace">
       <NavBar />
-      {
+        {
             (loading) ? 
             // make a loader
-            (<h2>Loading . . . </h2>) 
+            (<h2>
+              Loading . . . 
+              </h2>) 
             :
             (
                 <>
@@ -116,9 +107,9 @@ useEffect(()=>{
                 <QuoteDisplay />
                 </>
             )
-          }
+        }
     </div>
   )
 }
 
-export default App
+export default MySpace
