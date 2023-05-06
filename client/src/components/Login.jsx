@@ -26,7 +26,7 @@ const Login = () => {
       formData
       ).then((response) => {
         const data = response.data;
-        if(data.username){
+        if(data.status === 'ok'){
           console.log(data)
           alert('Login Successful')
           // window.location.href = '/'

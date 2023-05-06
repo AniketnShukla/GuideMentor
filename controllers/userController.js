@@ -225,11 +225,17 @@ const loginUser = asyncHandler(async(req, res) => {
     //     ],
     //     password: password
     // })
-    const userDB = User.findOne({
-        username: name
+    // const userDB = User.findOne({
+    //     username: name
+    // })
+    
+    const userDB = User.aggregate
+    .match({
+        username: name,
+        password: password
     })
 
-    // console.log(userDB);
+    console.log(userDB);
     if(userDB){
     //     const token = jwt.sign({
     //         username: user.username,
