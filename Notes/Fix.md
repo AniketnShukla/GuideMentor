@@ -21,3 +21,4 @@ WORK ON DELETING QUOTES AND EMOTIONS NEXT.
 22. Navbar jumps from shown to hidden on switching pages, make the boolean value it a redux state variable so it stays the same on all pages.
 23. On <App />, switching from Loading ... to showing data is snappy, put a transition so it looks good.
 24.Add css for loading on <App />
+25.Add get all enhancements spoken about from veevee.
