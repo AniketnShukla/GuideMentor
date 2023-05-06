@@ -26,14 +26,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={ store }>
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
+          <Route path="/" element={ sessionStorage.getItem('username') ? (<App />) : ( <Navigate replace to ={"/start"} />)} />
           {/* <Route path="/home" element={ loggedIn ? (<App />) : ( <Navigate replace to ={"/start"} />)} /> */}
           <Route path="/home" element={<App />}/>
           <Route exact path="/start" element={<Start />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
-          <Route path="/default" element={ loggedIn ? (<QuotePage />) : ( <Navigate replace to ={"/start"} />)} />
-          <Route path="/add" element=  { loggedIn ? (<AddQuote />) : ( <Navigate replace to ={"/start"} />)} />
+          <Route path="/default" element={ sessionStorage.getItem('username') ? (<QuotePage />) : ( <Navigate replace to ={"/start"} />)} />
+          <Route path="/add" element=  { sessionStorage.getItem('username') ? (<AddQuote />) : ( <Navigate replace to ={"/start"} />)} />
           <Route path="*" element={<Error404 />} />
           {/* <Route path="/" element= {<App />} />
           <Route path="/home" element={ <App />} />
