@@ -229,23 +229,21 @@ const loginUser = asyncHandler(async(req, res) => {
     //     username: name
     // })
     
-    const userDB = User.aggregate
-    .match({
+    const userDB = await User.findOne({
         username: name,
         password: password
-    })
+    }).exec();
 
     console.log(userDB);
-    if(userDB){
+    if(!userDB){
+        return res.json({status: 'error', user: false})
+    }
     //     const token = jwt.sign({
     //         username: user.username,
     //         password: user.password
     //     }, 'secret123')
-        return res.json({status: 'ok', username: name})
-    }
-    else{
-        return res.json({status: 'error', user: false})
-    }
+    return res.json({status: 'ok', username: name})
+    
 })
 
 //@desc Deleta a users
