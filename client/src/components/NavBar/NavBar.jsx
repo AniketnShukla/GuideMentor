@@ -68,14 +68,16 @@ const NavBar = () => {
                 <li>FreezeBg</li>
                 </div>
               </div>
-              <div className='nav-links' id='bottom'>
-                <li>
-                  <Link to='/start' onClick={()=>{
-                    sessionStorage.removeItem('username')
-                  }}>
-                        Logout
-                  </Link>
-                </li>
+              <div id='bottom'>
+                <div className='nav-links' >
+                  <li>
+                    <Link to='/start' onClick={()=>{
+                      sessionStorage.removeItem('username')
+                    }}>
+                          Logout
+                    </Link>
+                  </li>
+                </div>
               </div>
             </ul>
         </nav>
