@@ -2,10 +2,10 @@
 1.Add Different space for preset Emotions, which shows on login.
 <!-- 2.The login button in start page should redirect to home if user logged in.  -->
 3.Come up with a solution for restrictive emotions
+4.Finish the above and work on life app?, but only once you're done examining the existing site, have clear understanding of what you want it to be, what it should do and how you will be implementing on paper or notes. 
 
 >1.
 Here are some emotions in which a human might need guidance or words of wisdom:
-
 Here's a grouping of the emotions by the generic emotion they stem from:
 
 4."angry"
@@ -21,6 +21,8 @@ Here's a grouping of the emotions by the generic emotion they stem from:
 11."gloomy"
 
 12. Add hurt
+13. Add lost
+14. Add hurt
 
 hurt in relationship?
 [

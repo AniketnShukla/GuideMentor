@@ -518,31 +518,31 @@
         {
             "quote": "Believe you can and you're halfway there.",
             "author": "Theodore Roosevelt",
-            "emotion": "lacking motivation",
+            "emotion": "lacking_motivation",
             "secondary_emotion": "Self-Belief"
         },
         {
             "quote": "You miss 100% of the shots you don't take.",
             "author": "Wayne Gretzky",
-            "emotion": "lacking motivation",
+            "emotion": "lacking_motivation",
             "secondary_emotion": "Risk-Taking"
         },
         {
             "quote": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
             "author": "Winston Churchill",
-            "emotion": "lacking motivation",
+            "emotion": "lacking_motivation",
             "secondary_emotion": "Perseverance"
         },
         {
             "quote": "The biggest adventure you can ever take is to live the life of your dreams.",
             "author": "Oprah Winfrey",
-            "emotion": "lacking motivation",
+            "emotion": "lacking_motivation",
             "secondary_emotion": "Adventure"
         },
         {
             "quote": "The only way to do great work is to love what you do.",
             "author": "Steve Jobs",
-            "emotion": "lacking motivation",
+            "emotion": "lacking_motivation",
             "secondary_emotion": "Passion"
         },
         {

@@ -51,7 +51,7 @@ import imgUnregisteredAuthor6 from './../assets/UnregisteredAuthor/img6.jpg'
 import imgUnregisteredAuthor7 from './../assets/UnregisteredAuthor/img7.jpg'
 import imgUnregisteredAuthor8 from './../assets/UnregisteredAuthor/img8.jpg'
 import imgUnregisteredAuthor9 from './../assets/UnregisteredAuthor/img9.jpg'
-import imgUnregisteredAuthor10 from './../assets/UnregisteredAuthor/img10.jpg'
+// import imgUnregisteredAuthor10 from './../assets/UnregisteredAuthor/img10.jpg'
 import imgUnregisteredAuthor11 from './../assets/UnregisteredAuthor/img11.jpg'
 import imgUnregisteredAuthor12 from './../assets/UnregisteredAuthor/img12.jpg'
 import imgUnregisteredAuthor13 from './../assets/UnregisteredAuthor/img13.jpg'
@@ -61,14 +61,14 @@ import imgUnregisteredAuthor16 from './../assets/UnregisteredAuthor/img16.jpg'
 import imgUnregisteredAuthor17 from './../assets/UnregisteredAuthor/img17.jpg'
 import imgUnregisteredAuthor18 from './../assets/UnregisteredAuthor/img18.jpg'
 import imgUnregisteredAuthor19 from './../assets/UnregisteredAuthor/img19.jpg'
-import imgUnregisteredAuthor20 from './../assets/UnregisteredAuthor/img20.jpg'
+// import imgUnregisteredAuthor20 from './../assets/UnregisteredAuthor/img20.jpg'
 import imgUnregisteredAuthor21 from './../assets/UnregisteredAuthor/img21.jpg'
 import imgUnregisteredAuthor22 from './../assets/UnregisteredAuthor/img22.jpg'
 import imgUnregisteredAuthor23 from './../assets/UnregisteredAuthor/img23.jpg'
 import imgUnregisteredAuthor24 from './../assets/UnregisteredAuthor/img24.jpg'
 import imgUnregisteredAuthor25 from './../assets/UnregisteredAuthor/img25.jpg'
 import imgUnregisteredAuthor26 from './../assets/UnregisteredAuthor/img26.jpg'
-import imgUnregisteredAuthor27 from './../assets/UnregisteredAuthor/img27.jpg'
+// import imgUnregisteredAuthor27 from './../assets/UnregisteredAuthor/img27.jpg'
 
 export default {
     "David Goggins":[
@@ -142,7 +142,7 @@ export default {
         imgUnregisteredAuthor7,
         imgUnregisteredAuthor8,
         imgUnregisteredAuthor9,
-        imgUnregisteredAuthor10,
+        // imgUnregisteredAuthor10,
         imgUnregisteredAuthor11,
         imgUnregisteredAuthor12,
         imgUnregisteredAuthor13,
@@ -152,14 +152,14 @@ export default {
         imgUnregisteredAuthor17,
         imgUnregisteredAuthor18,
         imgUnregisteredAuthor19,
-        imgUnregisteredAuthor20,
+        // imgUnregisteredAuthor20,
         imgUnregisteredAuthor21,
         imgUnregisteredAuthor22,
         imgUnregisteredAuthor23,
         imgUnregisteredAuthor24,
         imgUnregisteredAuthor25,
         imgUnregisteredAuthor26,
-        imgUnregisteredAuthor27,
+        // imgUnregisteredAuthor27,
 
     ]
 }

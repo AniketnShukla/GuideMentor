@@ -33,48 +33,50 @@ const NavBar = () => {
           <div className="navButton" onClick={toggleNav}>
             <b>{(isActive) ? <VscClose /> : <VscMenu />}</b>
           </div>
-            <ul>
-              <div className='add-btn' id='currentUser'>
-                <li>
-                {/* <Link to='/a' > */}
-                    {currentUser} 
-                {/* </Link> */}
-                </li>
+            <ul id="divider">
+              <div id="top">
+                <div className='nav-links' id='currentUser'>
+                  <li>
+                  {/* <Link to='/a' > */}
+                      {currentUser} 
+                  {/* </Link> */}
+                  </li>
+                </div>
+                <div className='nav-links'>
+                  <li>
+                    <Link to='/home' >
+                      Home
+                    </Link>
+                  </li>
+                </div>
+                <div className='nav-links'>
+                  <li>
+                    <Link to='/my-space' >
+                      My Space
+                    </Link>
+                  </li>
+                </div>
+                <div className='nav-links'>
+                  <li>
+                    <Link to='/add' >
+                      Add
+                    </Link>
+                  </li>
+                </div>
+                {/* </div> */}
+                <div onClick={toggleFreezeBg} className={(isFrozen) ? "frozen nav-links": "notFrozen nav-links"}>
+                <li>FreezeBg</li>
+                </div>
               </div>
-              <div className='add-btn'>
+              <div className='nav-links' id='bottom'>
                 <li>
-                  <Link to='/home' >
-                    Home
+                  <Link to='/start' onClick={()=>{
+                    sessionStorage.removeItem('username')
+                  }}>
+                        Logout
                   </Link>
                 </li>
               </div>
-              <div className='add-btn'>
-                <li>
-                  <Link to='/my-space' >
-                    My Space
-                  </Link>
-                </li>
-              </div>
-              <div className='add-btn'>
-                <li>
-                  <Link to='/add' >
-                    Add
-                  </Link>
-                </li>
-              </div>
-              {/* </div> */}
-              <div onClick={toggleFreezeBg} className={(isFrozen) ? "frozen add-btn": "notFrozen add-btn"}>
-              <li>FreezeBg</li>
-              </div>
-                <li>
-                  <div className='add-btn'>
-              <Link to='/start' onClick={()=>{
-                sessionStorage.removeItem('username')
-              }}>
-                    Logout
-              </Link>
-                  </div>
-                </li>
             </ul>
         </nav>
     </>

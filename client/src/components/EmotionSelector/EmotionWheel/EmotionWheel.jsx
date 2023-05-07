@@ -52,7 +52,7 @@ const currentUser = sessionStorage.getItem('username')
   // }
   return (
     <div className='emotionwheel'>
-      <span>What do you feel</span>
+      <span id="header_line">What do you feel</span>
         <div className="circle-wrapper">
           {(dataCheck) ? 
           ( circle )

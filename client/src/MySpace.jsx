@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './MySpace.css'
+import './Emotion-text.css'
 import EmotionWheel from './components/EmotionSelector/EmotionWheel/EmotionWheel'
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux'
@@ -96,7 +97,7 @@ useEffect(()=>{
         {
             (loading) ? 
             // make a loader
-            (<h2>
+            (<h2 id='loading' >
               Loading . . . 
               </h2>) 
             :
