@@ -4,12 +4,15 @@ import "./signup.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setSessionUser } from "../features/session/sessionSlice";
 
 // import logo from "../assets/logo.png";
 
 
 const Login = () => {
   //name can be username or email
+  const dispatch = useDispatch();
     const [formData, setFormData] = useState({name: "",password: ""});
     const navigate = useNavigate();
     const handleChange = (event) => {
@@ -30,6 +33,7 @@ const Login = () => {
           console.log(data)
           // window.location.href = '/'
           sessionStorage.setItem('username', data.username)
+          dispatch(setSessionUser(sessionStorage.getItem('username')))
           console.log('kkk')
           navigate("/home");
           alert('Login Successful')

@@ -22,3 +22,4 @@ WORK ON DELETING QUOTES AND EMOTIONS NEXT.
 23. On <App />, switching from Loading ... to showing data is snappy, put a transition so it looks good.
 24.Add css for loading on <App />
 25.Add get all enhancements spoken about from veevee.
+26. ********** WORK ON THISSReloading Site, reroutes to start page. fix. 

@@ -13,9 +13,10 @@ import imageData from './data/Images.js'
 import NavBar from './components/NavBar/NavBar'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay'
 import { setUserEmotions } from './features/emotions/emotionsSlice';
+import { useNavigate } from 'react-router-dom';
 
 function MySpace() {
-
+  const navigate = useNavigate();
   const dispatch = useDispatch()
   const [count, setCount] = useState(0)
   const currentState = useSelector((state) => {
@@ -93,13 +94,20 @@ useEffect(()=>{
   // const emotions = [...new Set(data.map(( object ) => object.emotion))];
   return (
     <div className="MySpace" id="MySpace">
-      {/* <NavBar />
+      <NavBar />
         {
             (loading) ? 
             // make a loader
-            (<h2 id='loading' >
-              Loading . . . 
-              </h2>) 
+            (<div id='loading' >
+              {/* Should be Loading . . . , Will put Add Quotes for now */}
+            <div className="add-quote-btn" onClick={()=>{
+          // window.location.href = '/add'
+           navigate('/add');
+          }
+          }>
+            Add Quotes
+            </div>
+              </div>) 
             :
             (
                 <>
@@ -107,11 +115,11 @@ useEffect(()=>{
                 <QuoteDisplay />
                 </>
             )
-        } */}
-      <NavBar />
+        }
+      {/* <NavBar />
       <EmotionWheel emotions={localEmotions} userData={localUserData}/>
       <QuoteDisplay />
-            
+             */}
     </div>
   )
 }
