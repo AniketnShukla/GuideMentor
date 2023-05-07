@@ -93,7 +93,7 @@ useEffect(()=>{
   // const emotions = [...new Set(data.map(( object ) => object.emotion))];
   return (
     <div className="MySpace" id="MySpace">
-      <NavBar />
+      {/* <NavBar />
         {
             (loading) ? 
             // make a loader
@@ -107,7 +107,11 @@ useEffect(()=>{
                 <QuoteDisplay />
                 </>
             )
-        }
+        } */}
+      <NavBar />
+      <EmotionWheel emotions={localEmotions} userData={localUserData}/>
+      <QuoteDisplay />
+            
     </div>
   )
 }
