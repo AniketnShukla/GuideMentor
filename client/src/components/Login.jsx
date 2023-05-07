@@ -28,11 +28,11 @@ const Login = () => {
         const data = response.data;
         if(data.status === 'ok'){
           console.log(data)
-          alert('Login Successful')
           // window.location.href = '/'
           sessionStorage.setItem('username', data.username)
           console.log('kkk')
           navigate("/home");
+          alert('Login Successful')
         }
         else{
           alert('Please check your username and password')

@@ -35,6 +35,7 @@
 
 .add-quote-btn{
     margin-top: 1rem;
+    color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-fill-color: #343434;
 	-webkit-text-stroke-color: #1A1A1A;
