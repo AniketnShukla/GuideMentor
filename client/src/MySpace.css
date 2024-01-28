@@ -20,6 +20,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 .MySpace{
+  padding-top:3rem;
   overflow: hidden;
   height: 100vh; 
   /* background-image: url  (/src/assets/UnregisteredAuthor/img1.jpg); */

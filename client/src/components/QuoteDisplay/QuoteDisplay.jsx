@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import './../../App.css'
+import './../../Home.css'
 
 const QuoteDisplay = () => {
-  const author = useSelector((state)=> state.quoteReducer.author)
-  const quote = useSelector((state) => state.quoteReducer.quote)  
+  const author = useSelector((state)=> state.quote.author)
+  const quote = useSelector((state) => state.quote.quote)  
   return (
     <div className='emotion-text'>
         <h3>{ quote }</h3>

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import img2 from "/src/assets/UnregisteredAuthor/img2.jpg";
+import img3 from "/src/assets/UnregisteredAuthor/img3.jpg";
 
 const initialState = {
     image: img2,

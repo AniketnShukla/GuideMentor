@@ -1,43 +1,51 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './AddQuote.css'
 import { Link, useNavigate } from 'react-router-dom';
 import img3 from "/src/assets/UnregisteredAuthor/img3.jpg";
 import axios from 'axios';
+import { useFetchDataMutation } from '../../slices/usersApiSlice';
+import { toast } from 'react-toastify';
+import { setUserData } from '../../features/userData/userDataSlice';
 const AddQuote = () => {
-    const navigate = useNavigate();
+    
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
     const [emotion, setEmotion] = useState('');
     const [checkMultiple, setCheckMultiple] = useState(false);
     const [userEmotions, setUserEmotions] = useState([]);
     const [radioEmotion, setRadioEmotion] = useState(null);
-    let img = useSelector((state) => state.imageReducer.image)
+    
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    
+    
+    let img = useSelector((state) => state.image.image)
+    const { userCred } = useSelector((state) => state.auth)
+    const { userData } = useSelector((state) => state.userData)
+
+    const [fetch, { isFetchLoading } ] = useFetchDataMutation();
+
+    const currentUser = userCred.name;
+    
+
     //img not updating when author not set check
     if(!img) img = img3; 
 
     useEffect(() => {
         const app = document.getElementById('add-quote');
         app.style.backgroundImage = `url(${img})`;
-        const currentUser = sessionStorage.getItem('username')
-        axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
-            currentUser: currentUser
-          })
-          .then((response)=>{
-            console.log(response.data);
-            setUserEmotions(response.data?.emotionData)
-          },[])
-          .catch((e)=>{
-            console.log(e);
-          })
-    },[])
+        if(userData !== null){
+            console.log(userData);
+            setUserEmotions(userData.emotionData);
+        }
+    },[userData]);
 
     if(userEmotions?.length > 0){
 
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        const currentUser = sessionStorage.getItem('username');
 
         axios.post(`${import.meta.env.VITE_SERVER_URL}/user/quote`, {
             currentUser: currentUser,
@@ -45,7 +53,14 @@ const AddQuote = () => {
             author: author,
             emotion: emotion
         }).then(()=>{
-            alert('Quote added.')
+            axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion-data`, { //get update emotionArray
+                currentUser: currentUser,
+            }).then( async (response)=>{
+                setUserEmotions(response.data);
+                const res = await fetch({currentUser: currentUser}).unwrap();
+                dispatch(setUserData(res));
+            })
+            toast.success('Quote added.')
         }).catch((e)=>{
             console.log(e)
         })
@@ -59,12 +74,6 @@ const AddQuote = () => {
     }
   return (
     <div className='add-quote' id="add-quote">
-        <Link to='/'>
-        <div className="home-btn">
-            Home
-        </div>
-        </Link>
-            
         <form onSubmit={handleSubmit} className="form">
             <label htmlFor="quote">Quote</label>
             <input 
@@ -81,8 +90,24 @@ const AddQuote = () => {
                 value={author}
                 onChange={(e) => setAuthor(e.target.value) } 
                 />
+
             <label htmlFor="emotion">Emotion</label>
-            <div className="radio-group">
+            <select
+            id='emotion'
+            className='secondary-input'
+            value={emotion}
+            onChange={(e) =>{
+                setRadioEmotion(null);
+                setEmotion(e.target.value);
+            }}>
+            <option value="" hidden>Select previous emotion</option>
+            {userEmotions.map((emotion, index) => (
+                <option key={index} value={emotion}>
+                {emotion}
+                </option>
+            ))}
+            </select>
+            {/* <div className="radio-group">
                 {userEmotions.map((emotion, index)=>(
                     <div className="radio" key={index}>
                         <label>
@@ -114,11 +139,12 @@ const AddQuote = () => {
                             &nbsp;clear
                         </label>  
                     </div>
-            </div>
+            </div> */}
             <input 
                 type="text"
                 id="emotion"
                 className='secondary-input'   
+                placeholder="Enter New emotion"
                 value={emotion}
                 disabled={radioEmotion !== null}
                 onChange={(e) => {

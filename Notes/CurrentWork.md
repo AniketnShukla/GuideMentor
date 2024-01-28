@@ -22,3 +22,8 @@
 ----send the array of presetEmotions and presetQuotes data to <EmotionCircle /> as props. 
 <!-- ----create a new array by filtering the array of quotes, and appending all quotes whose emotion === ele(mapped emotion)
 ----send the temp array as prop to <EmotionCirlce />  -->
+
+<!-- 09 Aug 2023 -->
+Added google auth, it fetches data, with ._json something
+have to integrate this mongo db and change the mechanism that uses sessionStorage and the way main.jsx is structured
+to redirect if user is not logged in 

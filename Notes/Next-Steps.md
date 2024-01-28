@@ -23,6 +23,7 @@ Here's a grouping of the emotions by the generic emotion they stem from:
 12. Add hurt
 13. Add lost
 14. Add hurt
+15. Add Tired
 
 hurt in relationship?
 [

@@ -6,40 +6,39 @@ import './emotionwheel.css'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 
-
 const EmotionWheel = (props) => {
   const [emotions, setEmotions] = useState(props.emotions);
-  const [userData, setUserData] = useState(props.userData);
+  const [quotes, setUserData] = useState(props.quotes);
+
   const dispatch = useDispatch();
- 
-  // console.log(state);
-//   const emotions = useSelector((state) => {
-//     return state.emotionReducer.emotions;
-// });
-//   const userData = useSelector((state) => {
-//     return state.emotionReducer.userData;
-// });
-console.log(emotions)
-// console.log(userData)
-const navigate = useNavigate();
-const currentUser = sessionStorage.getItem('username')
-  console.log(currentUser)
+  const navigate = useNavigate();
+  
+  const {userCred} = useSelector((state)=> state.auth);
+
+  const currentUser = userCred ? userCred.name: null;
+  // console.log(currentUser)
   const [circle, setCircle] = useState([]);
 
   // const emotions = props.emotions;
   // const userData = props.userData;
-  console.log(userData);
+  // console.log(quotes);
   const [dataCheck, setDataCheck] = useState(false);
     let emotionQuoteArray;
   useEffect(()=>{
-    console.log(userData);
-    (typeof userData === Array) ? emotionQuoteArray = userData?.filter((quote) => quote.emotion === 'sad' ) : []
+    // console.log(quotes);
+    //HEREREREREREREREREREER
+    (typeof quotes !== null || typeof emotions !== null) ? 
+    emotionQuoteArray = quotes?.filter((quote) => quote?.emotion === 'sad' ) : []
+
+    // console.log('quotes');
+    console.log(props.presetEmotionsIconsObj);
     setCircle(emotions.map((emotion, index) => (
       <EmotionCircle 
       key = { index }
       emotion = { emotion }
+      presetEmotionsIconsObj={props.presetEmotionsIconsObj}
       // quotes = { emotionQuoteArray }
-      quotes = { userData.filter((quote)=> quote.emotion === emotion)}
+      quotes = { quotes?.filter((quote)=> quote?.emotion === emotion)}
       />    
       ))
       )
@@ -48,7 +47,7 @@ const currentUser = sessionStorage.getItem('username')
       }else{
         setDataCheck(false);
       }
-  },[userData])
+  },[quotes])
   // }
   return (
     <div className='emotionwheel'>

@@ -14,53 +14,48 @@ import NavBar from './components/NavBar/NavBar'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay'
 import { setUserEmotions } from './features/emotions/emotionsSlice';
 import { useNavigate } from 'react-router-dom';
+import { useFetchDataMutation } from './slices/usersApiSlice.js';
 
-function MySpace() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch()
+const MySpace = () => {
+
   const [count, setCount] = useState(0)
-  const currentState = useSelector((state) => {
-    return state.stateReducer.state
-  // console.log(state);
-  });
-  const author = useSelector((state)=> state.quoteReducer.author)
-  const quote = useSelector((state) => state.quoteReducer.quote)
-  const freezeBackground = useSelector((state) => state.imageReducer.freezeBackground)
-  // const image = useSelector((state) => state.imageReducer.image)
   const [bgImage, setBgImage] = useState('')
-  const currentUser = sessionStorage.getItem('username')
   const [localEmotions, setLocalEmotions] = useState([]);
   const [localUserData, setLocalUserData] = useState({});
   const [loading, setLoading] = useState(true);
-  console.log('state');
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // const currentState = useSelector((state) => {
+  //   return state.stateReducer.state
+  // // console.log(state);
+  // });
+  
+  const { userCred } = useSelector((state)=> state.auth);
+  const author = useSelector((state)=> state.quote.author);
+  const quote = useSelector((state) => state.quote.quote);
+  const freezeBackground = useSelector((state) => state.image.freezeBackground)
+  const { userData } = useSelector((state)=> state.userData);
+  
+  const currentUser = userCred.name;
+  useEffect(()=>{
+    if(userData !== null) {
+      console.log(userData);
+      setLocalUserData(userData.quoteData)
+      setLocalEmotions(userData.emotionData)
+    }
+  },[userData])
+
+  // const image = useSelector((state) => state.imageReducer.image)
 //   const emotions = useSelector((state) => {
 //     return state.emotionReducer.emotions;
 // });
 //   const userData = useSelector((state) => {
 //     return state.emotionReducer.userData;
 // });
-  const reduxImage = useSelector((state) => {
-    return state.imageReducer.image;
-});
-useEffect(()=>{
-  //userdata is userquotedata
-        const getUserData = async() => {   
-            axios.post(`${import.meta.env.VITE_SERVER_URL}/user/emotion`, {
-                currentUser: currentUser
-            })
-            .then((response)=>{
-                console.log(response.data?.quoteData);
-                setLocalUserData(response.data?.quoteData)
-                setLocalEmotions(response.data?.emotionData)
-                // dispatch(setUserData(response.data))
-                // dispatch(setUserEmotions(response.data))
-            })
-            .catch((e)=>{
-                console.log(e);
-            })
-        }
-        getUserData();
-  },[])
+  const reduxImage = useSelector((state) => {return state.image.image;});
+  
   useEffect(()=>{
     if(localEmotions?.length > 0 && Object.keys(localUserData).length !== 0){
       console.log(localEmotions);
@@ -94,7 +89,6 @@ useEffect(()=>{
   // const emotions = [...new Set(data.map(( object ) => object.emotion))];
   return (
     <div className="MySpace" id="MySpace">
-      <NavBar />
         {
             (loading) ? 
             // make a loader
@@ -111,7 +105,11 @@ useEffect(()=>{
             :
             (
                 <>
-                <EmotionWheel emotions={localEmotions} userData={localUserData}/>
+                {console.log("Type of hashfhasfhahAHHAHAAH", typeof localEmotions, typeof localUserData)}
+                {console.log(localEmotions )}
+                {console.log( localUserData)}
+                {/* for now requesting the user to limit emotions to either emojis, or less than 6 letters */}
+                <EmotionWheel emotions={localEmotions} quotes={localUserData} presetEmotionsIconsObj={null}/>
                 <QuoteDisplay />
                 </>
             )

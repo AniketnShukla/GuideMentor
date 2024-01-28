@@ -1,3 +1,16 @@
+/* for react-tooltip */
+/* :root {
+    --rt-color-white: #fff;
+    --rt-color-dark: #222;
+    --rt-color-success: #8dc572;
+    --rt-color-error: #be6464;
+    --rt-color-warning: #f0ad4e;
+    --rt-color-info: #337ab7;
+    --rt-opacity: 0.9;
+    --rt-transition-show-delay: 0.15s;
+    --rt-transition-closing-delay: 0.15s;
+  } */
+
 .emotioncircle{
     background-color: rgba(17, 16, 16, 0.412);
     width: 5rem;
@@ -18,11 +31,48 @@
     outline: 1px solid transparent;
 }
 
+
 .emotioncircle:hover{
     outline: 1px solid #04d9ff;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 #active{
     outline: 1px solid #04d9ff;
+}
+
+@media only screen and (max-width: 600px){
+
+    /* .prompt-input{
+        width: 200px;
+        bottom: 0.5rem;
+        border: 1px solid red;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 20%;
+    } */
+    
+
+    .emotioncircle{
+        font-size: 1rem;
+        font-weight: 200;
+        width: 3rem;
+        height: 3rem;
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -khtml-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+    }
+    #my-tooltip{
+        background-color: black;
+        opacity: 1;;
+    }
+}
+
+a{
+    text-decoration: none;
 }

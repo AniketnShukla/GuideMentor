@@ -7,7 +7,6 @@
     left: 4%;
     right: 0;
     width:700px;
-    font-size: 1.5rem;
     display: grid;
     place-items: center;
     gap: 1rem;
@@ -17,10 +16,14 @@
     -webkit-backdrop-filter: blur( 3px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    /* border: 1px solid red; */
+    font-size:  0.5rem;
   }
   .emotion-text h3{
     /* font-style: italic; */
-    font-family: 'Poppins', sans-serif;
+    /* letter-spacing: -.3px; */
+    font-size: 1.4rem;
+    /* font-family: 'Poppins', sans-serif; */
     font-weight:200;
   }
   .emotion-text h4{
@@ -36,10 +39,21 @@
         margin-left:  auto;
         margin-right:  auto;
         width: 90vw;
-        font-size: 1.3rem;
         font-weight: 100;
         gap: 0.5rem;
         text-align: center;
+
         /* letter-spacing: 0.3px; */
+      }
+      .emotion-text h3{
+        /* font-style: italic; */
+        letter-spacing: -.3px;
+        font-size: 1.1rem;
+        font-weight:200;
+      }
+      .emotion-text h4{
+        font-size: 1.0rem;
+        font-style: italic;
+        font-weight: 100;
       }
 }

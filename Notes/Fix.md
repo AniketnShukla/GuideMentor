@@ -22,4 +22,13 @@ WORK ON DELETING QUOTES AND EMOTIONS NEXT.
 23. On <App />, switching from Loading ... to showing data is snappy, put a transition so it looks good.
 24.Add css for loading on <App />
 25.Add get all enhancements spoken about from veevee.
-26. ********** WORK ON THISSReloading Site, reroutes to start page. fix. 
+26. ********** WORK ON THISS Reloading Site, reroutes to start page. fix. 
+27. MySpace Has Addquotes button instead of loading, because the condition of emotions.length > 0, applies for both, the emotions not being loaded, and problematically also when user has not added any quotes/(emotions) yet. NEED TO FIX. MAJOR MINOR ISSUE. 
+28.Optimize Preset Quote-Emotion relations, => some preset quotes don't fit well with the emotions.
+
+29.[2:10 pm, 07/05/2023] Veeveeee: You plan on making the my space
+[2:10 pm, 07/05/2023] Veeveeee: Public and private as per the user's wish right?
+30. Duplicate username alert comes up after navigating to login page, should stay on signup page is dusername already exists,
+31. Change thge alert mesage of Duplicate username to username already exists. 
+32.Deal with spaces on signup username
+33.Implenmet OTP for forot Password
