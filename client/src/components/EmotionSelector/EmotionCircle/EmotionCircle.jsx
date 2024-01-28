@@ -58,7 +58,7 @@ const EmotionCircle = (props) => {
         id={active === props.emotion ? 'active':''} 
         data-tooltip-id="my-tooltip"
         data-tooltip-content={
-          props.presetEmotionsIconsObj ? props.name: ''}
+          props.presetEmotionsIconsObj ? props.emotion: ''}
         // data-tooltip-content={props.emotion}
         data-tooltip-place="bottom"
           >  
