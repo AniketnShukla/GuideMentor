@@ -119,7 +119,7 @@ console.log(process.env.CLIENT_URL)
 
 //health of server
 app.get('/healthz', (req, res)=> {
-    res.json({status: 200});
+    res.status(200).send('OK');
 })
 
 app.use('/preset', presetDataRoutes);
