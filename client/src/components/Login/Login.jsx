@@ -93,6 +93,7 @@ const Login = () => {
           setLoading(false);
         } catch (err) {
           toast.error(err?.data?.message);
+          setLoading(false);
         }
         // axios.post(`${import.meta.env.VITE_SERVER_URL}/user/login`, 
         // formData
