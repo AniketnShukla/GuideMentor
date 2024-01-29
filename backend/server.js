@@ -6,6 +6,7 @@ import { logger } from './middleware/logger.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
+import connectMongo from 'connect-mongo';
 import cors from 'cors';
 import connectDB from './config/dbConn.js';
 import root from './routes/root.js';
@@ -18,18 +19,21 @@ import userRoutes from './routes/userRoutes.js';
 import corsOptions from './config/corsOptions.js';
 import User from './models/userModel.js';
 import generateToken from './utils/generateToken.js';
+import mongoose from 'mongoose';
 const PORT = process.env.PORT || 3201
 connectDB();
 
 const app = express();
+const MongoStore = connectMongo(session);
 
 app.use(express.json());
 
 app.use(session({
-  secret: "abc123",
+  secret: process.env.JWT_SECRET,
   resave: false,
-  saveUninitialized: true
-}))
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 
 app.use(express.urlencoded({extended: true}));//Lets our app reveive and parse json data and gives ability to parse json
 
