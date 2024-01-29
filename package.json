@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server",
+    "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm run dev --prefix client",
