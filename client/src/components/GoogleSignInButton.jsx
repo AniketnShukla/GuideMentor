@@ -17,12 +17,14 @@ const GoogleSignInButton = () => {
 
 
   return (
-    <div className="google_signin_signup_login" onClick={googleAuth}>
-        <span>Sign up with Google</span>
-        {/* <button > */}
-        <img src={google_btn} alt="google icon"  />
-        {/* </button> */}
-    </div>
+    // <div className="google_signin_signup_login" onClick={googleAuth}>
+    //     <span>Sign up with Google</span>
+    //     {/* <button > */}
+    //     <img src={google_btn} alt="google icon"  />
+    //     {/* </button> */}
+    // </div>
+    <>
+    </>
   )
 }
 
