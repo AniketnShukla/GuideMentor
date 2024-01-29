@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import img2 from "/src/assets/UnregisteredAuthor/img2.jpg";
 import img3 from "/src/assets/UnregisteredAuthor/img3.jpg";
+import img39 from "/src/assets/UnregisteredAuthor/img39.jpg";
+import img37 from "/src/assets/UnregisteredAuthor/img37.jpg";
 
 const initialState = {
-    image: img2,
+    image: img39,
     freezeBackground: false
 }
 

@@ -68,7 +68,22 @@ import imgUnregisteredAuthor23 from './../assets/UnregisteredAuthor/img23.jpg'
 import imgUnregisteredAuthor24 from './../assets/UnregisteredAuthor/img24.jpg'
 import imgUnregisteredAuthor25 from './../assets/UnregisteredAuthor/img25.jpg'
 import imgUnregisteredAuthor26 from './../assets/UnregisteredAuthor/img26.jpg'
-// import imgUnregisteredAuthor27 from './../assets/UnregisteredAuthor/img27.jpg'
+import imgUnregisteredAuthor28 from './../assets/UnregisteredAuthor/img28.jpg'
+import imgUnregisteredAuthor29 from './../assets/UnregisteredAuthor/img29.jpg'
+import imgUnregisteredAuthor30 from './../assets/UnregisteredAuthor/img30.jpg'
+import imgUnregisteredAuthor31 from './../assets/UnregisteredAuthor/img31.jpg'
+import imgUnregisteredAuthor32 from './../assets/UnregisteredAuthor/img32.jpg'
+import imgUnregisteredAuthor33 from './../assets/UnregisteredAuthor/img33.jpg'
+import imgUnregisteredAuthor34 from './../assets/UnregisteredAuthor/img34.jpg'
+import imgUnregisteredAuthor35 from './../assets/UnregisteredAuthor/img35.jpg'
+import imgUnregisteredAuthor36 from './../assets/UnregisteredAuthor/img36.jpg'
+import imgUnregisteredAuthor37 from './../assets/UnregisteredAuthor/img37.jpg'
+import imgUnregisteredAuthor38 from './../assets/UnregisteredAuthor/img38.jpg'
+import imgUnregisteredAuthor39 from './../assets/UnregisteredAuthor/img39.jpg'
+import imgUnregisteredAuthor40 from './../assets/UnregisteredAuthor/img40.jpg'
+import imgUnregisteredAuthor41 from './../assets/UnregisteredAuthor/img41.jpg'
+import imgUnregisteredAuthor42 from './../assets/UnregisteredAuthor/img42.jpg'
+import imgUnregisteredAuthor43 from './../assets/UnregisteredAuthor/img43.jpg'
 
 export default {
     "David Goggins":[
@@ -159,6 +174,22 @@ export default {
         imgUnregisteredAuthor24,
         imgUnregisteredAuthor25,
         imgUnregisteredAuthor26,
+        imgUnregisteredAuthor28,
+        imgUnregisteredAuthor29,
+        imgUnregisteredAuthor30,
+        imgUnregisteredAuthor31,
+        imgUnregisteredAuthor32,
+        imgUnregisteredAuthor33,
+        imgUnregisteredAuthor34,
+        imgUnregisteredAuthor35,
+        imgUnregisteredAuthor36,
+        imgUnregisteredAuthor37,
+        imgUnregisteredAuthor38,
+        imgUnregisteredAuthor39,
+        imgUnregisteredAuthor40,
+        imgUnregisteredAuthor41,
+        imgUnregisteredAuthor42,
+        imgUnregisteredAuthor43,
         // imgUnregisteredAuthor27,
 
     ]
