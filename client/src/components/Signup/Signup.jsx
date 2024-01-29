@@ -13,10 +13,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { setCredentials } from "../../slices/authSlice";
 import { setUserData } from "../../features/userData/userDataSlice";
 import GoogleSignInButton from "../GoogleSignInButton";
+import Loader from "../Loader";
 
 const Signup = () => {
   
   const [formData, setFormData] = useState({name: "",email: "", password: ""});
+  const [loading, setLoading ] = useState(null);
 
   const googleAuth = () => {
     alert(import.meta.env.VITE_SERVER_URL)
@@ -53,6 +55,8 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+
     try {
       const response = await register(formData).unwrap();
       dispatch(setCredentials({...response}));
@@ -64,11 +68,17 @@ const Signup = () => {
 
       } catch (err) {
         console.log(err);
+        toast.err(err);
+        setLoading(false);
+
       }
 
       navigate('/home');
+      setLoading(false);
+      
     } catch (err) {
       toast.error(err?.data?.message);
+      setLoading(false);
     }
     // axios.post(`${import.meta.env.VITE_SERVER_URL}/user/signup`, 
     //   formData
@@ -147,6 +157,12 @@ const Signup = () => {
             />
           </div>
           <br />
+          {loading && 
+          <div className="loader-screen">
+            <Loader />
+            <span className="loading-text">Thankyou for waiting! (it might take a minute)</span>
+          </div>
+          }
           <div className="signup">
             Have an account? <Link to="/login">Login</Link>!
           </div>
