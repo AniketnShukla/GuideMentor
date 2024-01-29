@@ -12,6 +12,7 @@ import NavBar from './components/NavBar/NavBar.jsx'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay.jsx'
 import { setUserEmotions } from './features/emotions/emotionsSlice.js';
 import { ToastContainer } from 'react-toastify';
+import './Toast.css'
 // import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.css';
 import useFetch from './hooks/useFetch.jsx';
@@ -113,7 +114,7 @@ const Test = () => {
 
   return (
     <div className="App" id="App">
-      <ToastContainer />
+      <ToastContainer className='toaster-container'/>
       {
         // (presetQuotesLoading || presetEmotionLoading ) ?
         (presetQuotes==null || presetEmotions==null ) ?

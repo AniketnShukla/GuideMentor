@@ -5,7 +5,7 @@ import img39 from "/src/assets/UnregisteredAuthor/img39.jpg";
 import img37 from "/src/assets/UnregisteredAuthor/img37.jpg";
 
 const initialState = {
-    image: img39,
+    image: img37,
     freezeBackground: false
 }
 

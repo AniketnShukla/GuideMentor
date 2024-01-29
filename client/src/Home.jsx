@@ -14,6 +14,7 @@ import NavBar from './components/NavBar/NavBar.jsx'
 import QuoteDisplay from './components/QuoteDisplay/QuoteDisplay.jsx'
 import { setUserEmotions } from './features/emotions/emotionsSlice.js';
 import { ToastContainer } from 'react-toastify';
+import './Toast.css'
 // import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -126,7 +127,7 @@ useEffect(()=>{
   return (
     <div className="App" id="App">
       <NavBar />
-      <ToastContainer />
+      <ToastContainer className='toaster-container'/>
       {
             (loading) ? 
             // make a loader

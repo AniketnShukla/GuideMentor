@@ -37,8 +37,8 @@
     margin-top: 1rem;
     color: white;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: #343434;
-	-webkit-text-stroke-color: #1A1A1A;
+    /* -webkit-text-fill-color: #343434; */
+	/* -webkit-text-stroke-color: #1A1A1A; */
     transition: 275ms all ease-in-out;
     font-size: 1rem;
     text-transform: uppercase;

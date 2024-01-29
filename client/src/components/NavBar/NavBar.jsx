@@ -108,6 +108,9 @@ const NavBar = () => {
                 </div>
               </div>
               <div id='bottom'>
+                <div className='nav-links'>
+                  <li><Link to='/about' >About</Link></li>
+                </div>
               {currentUser ?(
                 <>
                 <div className='nav-links ' 

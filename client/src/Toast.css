@@ -1,0 +1,9 @@
+.toaster-container > div {
+    padding: 0;
+    color: white;
+    background: #03030354;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.041);
+  }
+  

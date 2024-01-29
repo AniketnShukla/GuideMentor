@@ -53,7 +53,7 @@ option{
   font-size: 1.125rem;
   font-weight: 300;
 
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 15rem; 
 
   display: flex;
@@ -68,8 +68,8 @@ option{
   transition:  375ms ease-in-out;
   color:rgb(255, 255, 255);
   box-shadow: 0 8px 32px 0 rgba(2, 2, 2, 0.37);
-  backdrop-filter: blur( 2px );
-  -webkit-backdrop-filter: blur( 2px );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   outline: 1px solid transparent;
 
@@ -94,7 +94,7 @@ option{
   font-weight: 200;
 }
 .submit-btn{
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -123,7 +123,7 @@ option{
 }
 
 #quote{
-  width: 450px;
+  width: 80%;
   height: 30px;
 }
 #emotion{
@@ -151,17 +151,34 @@ option{
   gap: 1.5rem;
   font-size: 0.8rem;
 }
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:600px) {
   .form{
     /* border: 5px solid green; */
-    width: 75vw;
-    height: 80vh;
-    margin-top: 15rem;
+    width: 80%;
+    /* padding: 1rem; */
+    height: 70vh;
+    margin-top: 2rem;
+  }
+  imput#author.secondary-input{
+    width: 80%;
   }
   .form #quote{
-    width: 100%;
+    width: 80%;
   }
   .form #emotion{
-    width: 15em;
+    width: 80%;
+    font-size: 0.8rem;
   }
+  .form > .secondary-input{ 
+    width: 80%;
+    height: 2rem;
+    /* width: 80%; */
+  }
+  #emotion.secondary-input{
+    /* border: 1px solid red; */
+    /* margin: 0 1rem; */
+  }
+  /* select#emotion.secondary-input{
+    border: 1px solid red;
+  } */
 }

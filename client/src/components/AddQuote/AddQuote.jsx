@@ -60,7 +60,7 @@ const AddQuote = () => {
                 const res = await fetch({currentUser: currentUser}).unwrap();
                 dispatch(setUserData(res));
             })
-            toast.success('Quote added.')
+            toast.success('Quote Added.')
         }).catch((e)=>{
             console.log(e)
         })
@@ -91,7 +91,7 @@ const AddQuote = () => {
                 onChange={(e) => setAuthor(e.target.value) } 
                 />
 
-            <label htmlFor="emotion">Emotion</label>
+            <label htmlFor="emotion">Enter Emotion</label>
             <select
             id='emotion'
             className='secondary-input'
@@ -144,7 +144,8 @@ const AddQuote = () => {
                 type="text"
                 id="emotion"
                 className='secondary-input'   
-                placeholder="Enter New emotion"
+                placeholder="Use emojis or words < 5 letters! :)"
+                maxLength="5"
                 value={emotion}
                 disabled={radioEmotion !== null}
                 onChange={(e) => {

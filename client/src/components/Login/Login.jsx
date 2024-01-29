@@ -8,6 +8,7 @@ import { logout, setCredentials } from '../../slices/authSlice.js'
 import "./../Signup/signup.css";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
+import './../../Toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { setUserData } from "../../features/userData/userDataSlice.js";
 import GoogleSignInButton from "../GoogleSignInButton.jsx";
@@ -51,7 +52,22 @@ const Login = () => {
                   dispatch(setUserData({...res}));
                 } catch (err) {
                   console.log(err);
-                  toast.error(err?.data?.message);
+                  toast.error(
+                    <div
+                    style={{
+                      height: "100%",
+                    //   borderLeft: "5px solid green",
+                      display: "flex",
+                      alignItems: "center",
+                      paddingLeft: 5,
+                      background: '#03030354',
+                      backdropFilter: 'blur( 5px )',
+                    //   -webkit-backdrop-filter: blur( 5px ),
+                      border: '1px solid rgba(0, 0, 0, 0.041)',
+                    }}>
+                      <span style={{ fontWeight: "bold", color: "#fff" }}>{err?.data?.message}</span>
+                    </div>
+                    );
                 }
                 navigate('/home');
               }
@@ -119,7 +135,7 @@ const Login = () => {
     }
   return (
     <>
-    <ToastContainer />
+    <ToastContainer className='toaster-container'/>
     <div className="bg-img" id="signup">
       {/* <p class="start_header">HeadStache</p> */}
       <p className="start_header">Mentor</p>

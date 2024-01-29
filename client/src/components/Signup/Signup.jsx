@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { useFetchDataMutation, useRegisterMutation } from "../../slices/usersApiSlice";
 import { ToastContainer, toast } from 'react-toastify';
+import './../../Toast.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { setCredentials } from "../../slices/authSlice";
 import { setUserData } from "../../features/userData/userDataSlice";
@@ -100,7 +101,7 @@ const Signup = () => {
 
   return (
     <>
-    <ToastContainer />
+    <ToastContainer className='toaster-container'/>
 <div id="signup">
         {/* <p class="start_header">HeadStache</p> */}
         <p className="start_header">Mentor</p>

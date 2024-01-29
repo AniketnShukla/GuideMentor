@@ -16,6 +16,7 @@ import MySpace from './MySpace'
 import App from './App.jsx'
 import Test from './Test.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
+import About from './components/About.jsx';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
       <Route path="/" element={  <App /> }>
+        <Route exact path="/about" element={<About />} />
         <Route index={true} path="/" element={  <Test /> }/>
         <Route index={true} path="/home" element={  <Test /> }/>
         <Route path="/" element={  <PrivateRoute /> }>
