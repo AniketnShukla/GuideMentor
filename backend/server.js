@@ -117,10 +117,6 @@ app.use("/auth", authRoutes);   //for google authentication
 
 console.log(process.env.CLIENT_URL)
 
-//health of server
-app.get('/healthz', (req, res)=> {
-    res.status(200).send('OK');
-})
 
 app.use('/preset', presetDataRoutes);
 

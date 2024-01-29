@@ -6,7 +6,8 @@ import {
     getUserData,
     getEmotionData,
     saveQuote,
-    logoutUser
+    logoutUser,
+    siteHealth
 }  from '../controllers/userController.js';
 // import { protect } from '../middleware/authMiddleware.js';
 
@@ -17,6 +18,6 @@ router.post('/all-data', (getUserData));
 router.post('/emotion-data', (getEmotionData));
 router.post('/quote', saveQuote);
 router.post('/logout', logoutUser)
-
+router.get('/healthz', siteHealth);
 
 export default router;

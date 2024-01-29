@@ -138,6 +138,12 @@ const logoutUser = asyncHandler( async (req, res) => {
     }
 });
 
+// @desc Site Health
+// @route  /healthz
+// @access Public
+const siteHealth =  (req, res) => {
+        res.status(200).send('OK');
+}
 
 export {
     createNewUser,
@@ -145,5 +151,6 @@ export {
     getEmotionData,
     authUser,
     saveQuote,
-    logoutUser
+    logoutUser,
+    siteHealth
 }
