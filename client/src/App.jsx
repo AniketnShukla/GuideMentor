@@ -8,6 +8,7 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar.jsx';
 
 const App = () => {
+  console.log(import.meta.env.VITE_SERVER_URL)
   return (
     <>
         <Container fluid className='p-0'>
