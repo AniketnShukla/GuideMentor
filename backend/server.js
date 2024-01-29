@@ -24,15 +24,21 @@ const PORT = process.env.PORT || 3201
 connectDB();
 
 const app = express();
-const MongoStore = connectMongo(session);
 
 app.use(express.json());
 
 app.use(session({
   secret: process.env.JWT_SECRET,
   resave: false,
-  saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
+  saveUninitialized: false,
+  store: connectMongo.create({
+    client: mongoose.connection.getClient(),
+    dbName: process.env.DATABASE_NAME,
+    collectioName: "sessions",
+    stringify: false,
+    autoRemove:"interval",
+    autoRemoveIntercal: 1
+  })
 }));
 
 app.use(express.urlencoded({extended: true}));//Lets our app reveive and parse json data and gives ability to parse json
