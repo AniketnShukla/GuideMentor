@@ -88,7 +88,7 @@ passport.deserializeUser((user, done) => {
 
 
 if (process.env.NODE_ENV === 'production') {
-  //*Set static folder up in production
+  // Set static folder up in production
     app.use(express.static('client/build'));
     app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
     const __dirname = path.resolve();
@@ -105,7 +105,7 @@ app.use(logger);    //custom middleware
 
 // app.use(cors(corsOptions));   //Enabling CORS pre-flight across the board
   app.use(cors({
-    origin: ['http://localhost:5173', process.env.CLIENT_URL], //Allowed Origins
+    origin: ['http://localhost:5173', process.env.CLIENT_URL, 'https://mentor-mark-api.onrender.com'], //Allowed Origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     allowedHeader: ['Content-Type',  'Authorization'], 
     credentials: true, // Allows cookies
