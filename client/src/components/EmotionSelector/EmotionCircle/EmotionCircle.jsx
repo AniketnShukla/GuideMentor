@@ -51,7 +51,7 @@ const EmotionCircle = (props) => {
  console.log(props)
   return (
     <>
-    <Tooltip id="my-tooltip" style={{backgroundColor: "rgba(0, 0, 0, 0.1", fontSize: "0.8rem", opacity: "0.7"}}/>
+    <Tooltip id="my-tooltip" style={{backgroundColor: "rgba(0, 0, 0, 0.1", fontSize: "0.8rem", opacity: "0.7", zIndex:"999"}}/>
       <a 
         style={{textDecoration:"none"}}
         className='emotioncircle' onClick={handleClick} 

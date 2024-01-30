@@ -111,27 +111,6 @@ const Login = () => {
           toast.error(err?.data?.message);
           setLoading(false);
         }
-        // axios.post(`${import.meta.env.VITE_SERVER_URL}/user/login`, 
-        // formData
-        // ).then((response) => {
-        //   const data = response.data;
-        //   if(data.status === 'ok'){
-        //     console.log(data)
-        //     // window.location.href = '/'
-        //     sessionStorage.setItem('username', data.username)
-        //     dispatch(setSessionUser(sessionStorage.getItem('username')))
-        //     console.log('kkk')
-        //     navigate("/");
-        //     alert('Login Successful')
-        //   }
-        //   else{
-        //     alert('Please check your username and password')
-        //   }
-        // // alert(response.data)
-        // console.log(response.data)
-        // }).catch((e) => {
-        // console.log(e);
-    // })
     }
   return (
     <>

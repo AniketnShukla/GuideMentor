@@ -98,7 +98,10 @@ const NavBar = () => {
               ) : (
                 <>
                 <div className='nav-links'>
-                  <li><Link to='/start' >Sign-up</Link></li>
+                  <li><Link to='/start' >Sign up</Link></li>
+                </div>
+                <div className='nav-links'>
+                  <li><Link to='/login' >Login</Link></li>
                 </div>
                 </>
               )}

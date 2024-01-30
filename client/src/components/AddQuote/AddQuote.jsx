@@ -59,8 +59,8 @@ const AddQuote = () => {
                 setUserEmotions(response.data);
                 const res = await fetch({currentUser: currentUser}).unwrap();
                 dispatch(setUserData(res));
+                toast.success('Quote Added.')
             })
-            toast.success('Quote Added.')
         }).catch((e)=>{
             console.log(e)
         })
