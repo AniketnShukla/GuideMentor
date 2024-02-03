@@ -29,12 +29,12 @@ const Test = () => {
   const [presetEmotionsIconsObj, setPresetEnotionsIconsObj] = useState({
     "angry": <SlFire style={{ fontSize:'1.9rem'}} />,
 "overwhelmed": <GiTornado style={{ fontSize:'1.9rem'}} />,
-"frustrated": <GiAngryEyes style={{ fontSize:'1.9rem'}} />,
+"frustrated": <CiCloud style={{ fontSize:'1.9rem'}} />,
 "insecure":<CiLock style={{ fontSize:'1.9rem'}} />,
 "lonely": <IoFootstepsOutline  style={{ fontSize:'1.9rem'}} />,
-"sad": <CiCloud style={{ fontSize:'1.9rem'}} />,
+"sad":  <PiMaskSadThin style={{ fontSize:'1.9rem'}} />,
 "fear": <GiMonsterGrasp style={{ fontSize:'1.9rem'}} />,
-"jealous": <PiMaskSadThin style={{ fontSize:'1.9rem'}} />,
+"jealous": <GiAngryEyes style={{ fontSize:'1.9rem'}} />,
 "lacking_motivation": <SlDislike style={{ fontSize:'1.9rem'}} />,
 "procrastinating": <CiClock2 style={{ fontSize:'1.9rem'}} />,
 "gloomy": <CiCloudDrizzle style={{ fontSize:'1.9rem'}} />
