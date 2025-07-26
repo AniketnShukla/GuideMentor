@@ -16,6 +16,8 @@ import './Toast.css'
 // import 'react-toastify/dist/ReactToastify.css';
 import 'react-toastify/dist/ReactToastify.css';
 import useFetch from './hooks/useFetch.jsx';
+import { Canvas } from '@react-three/fiber'
+import GoldenBlob from './components/GoldenBlob' // adjust import as needed
 
 import { CiClock2, CiLock, CiCloud, CiCloudDrizzle } from "react-icons/ci";
 import { GiTornado, GiAngryEyes, GiMonsterGrasp } from "react-icons/gi";
@@ -23,24 +25,28 @@ import { FaFire } from "react-icons/fa";
 import { SlDislike, SlFire } from "react-icons/sl";
 import { IoFootstepsOutline  } from "react-icons/io5";
 import { PiMaskSadThin } from "react-icons/pi";
+import MoodMentor from './components/MoodMentor'; // <-- Add this
+import useAudioAnalyzer from './hooks/useAudioAnalyzer'
+import Visualizer from './pages/Visualizer'
 
 const Test = () => {
-
+  
+  const { energy, spectrum } = useAudioAnalyzer()
   const [presetEmotionsIconsObj, setPresetEnotionsIconsObj] = useState({
     "angry": <SlFire style={{ fontSize:'1.9rem'}} />,
-"overwhelmed": <GiTornado style={{ fontSize:'1.9rem'}} />,
-"frustrated": <CiCloud style={{ fontSize:'1.9rem'}} />,
-"insecure":<CiLock style={{ fontSize:'1.9rem'}} />,
-"lonely": <IoFootstepsOutline  style={{ fontSize:'1.9rem'}} />,
-"sad":  <PiMaskSadThin style={{ fontSize:'1.9rem'}} />,
+    "overwhelmed": <GiTornado style={{ fontSize:'1.9rem'}} />,
+    "frustrated": <CiCloud style={{ fontSize:'1.9rem'}} />,
+    "insecure":<CiLock style={{ fontSize:'1.9rem'}} />,
+    "lonely": <IoFootstepsOutline  style={{ fontSize:'1.9rem'}} />,
+    "sad":  <PiMaskSadThin style={{ fontSize:'1.9rem'}} />,
 "fear": <GiMonsterGrasp style={{ fontSize:'1.9rem'}} />,
 "jealous": <GiAngryEyes style={{ fontSize:'1.9rem'}} />,
 "lacking_motivation": <SlDislike style={{ fontSize:'1.9rem'}} />,
 "procrastinating": <CiClock2 style={{ fontSize:'1.9rem'}} />,
 "gloomy": <CiCloudDrizzle style={{ fontSize:'1.9rem'}} />
-  })
+})
 
-  const [count, setCount] = useState(0);
+const [count, setCount] = useState(0);
   const [bgImage, setBgImage] = useState('');
   const [presetEmotions, setPresetEmotions] = useState(null);
   const [presetEmotionsLoading, setPresetEmotionsLoading] = useState(null);
@@ -49,7 +55,7 @@ const Test = () => {
   const [presetQuotesLoading, setPresetQuotesLoading] = useState(null);
   const [presetQuotesError, setPresetQuotesError] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const mentorOn = useSelector(state => state.mentor.enabled);
   const currentUser = sessionStorage.getItem('username');
 
   const dispatch = useDispatch();
@@ -111,34 +117,75 @@ const Test = () => {
     dispatch(reset());
     dispatch(setQuote(''));
   }
+// In your main screen (e.g. Home.jsx, Test.jsx, or even inside QuoteDisplay if you want)
 
+
+function MiniBlob() {
   return (
-    <div className="App" id="App">
-      <ToastContainer className='toaster-container'/>
-      {
-        // (presetQuotesLoading || presetEmotionLoading ) ?
-        (presetQuotes==null || presetEmotions==null ) ?
-        
-        (
-            <h2 id='loading' >
-              {console.log('lo ' + presetEmotionsLoading, presetQuotesLoading)}
-              Loading . . . 
-              </h2>
-        ) 
-            :
-            (
-              <>
-              {/* {console.log("nononon", presetEmotionsLoading, presetQuotesLoading)}
-              {console.log("data dat data dta sdt a", presetEmotions, presetQuotes)}
-              {console.log("Type ofppgggggg", typeof presetEmotions.presetEmotions, typeof presetQuotes)} */}
-
-                <EmotionWheel emotions={presetEmotions.presetEmotions} quotes={presetQuotes} presetEmotionsIconsObj={presetEmotionsIconsObj}/>
-                <QuoteDisplay />
-                </>
-            )
-          }
+    <div
+      style={{
+        position: 'fixed',
+        bottom: 24,
+        right: 28,
+        width: 72,
+        height: 72,
+        zIndex: 99,
+        pointerEvents: 'none', // so it doesn't block mouse events
+        opacity: 0.92,
+        filter: 'blur(0.2px) saturate(1.1)'
+      }}
+    >
+      <Canvas
+        camera={{ position: [0, 0, 2.9], fov: 38 }}
+        style={{ background: 'transparent' }}
+        dpr={[1, 2]}
+      >
+        <ambientLight intensity={0.44} />
+        <directionalLight position={[5, 5, 5]} intensity={0.8} />
+        <GoldenBlob energy={0.15} />
+      </Canvas>
     </div>
   )
+}
+
+return (
+  <div className="App" id="App">
+    <ToastContainer className='toaster-container'/>
+    {
+      (presetQuotes==null || presetEmotions==null ) ?
+        (
+          <h2 id='loading' >
+            Loading . . . 
+          </h2>
+        ) 
+      : (
+        <>
+          {/* MENTOR OVERLAY */}
+          {/* <MoodMentor enabled={mentorOn} presetQuotes={presetQuotes} /> */}
+
+          <EmotionWheel emotions={presetEmotions.presetEmotions} quotes={presetQuotes} presetEmotionsIconsObj={presetEmotionsIconsObj}/>
+          {/* <QuoteDisplay /> */}
+          {/* <MiniBlob />  */}
+          <Visualizer
+  energy={energy}
+  spectrum={spectrum}
+  mini={true}
+  showShards={true} // or false if you want only the blob
+  style={{
+    width: 300,
+    height: 300,
+    bottom: 420,
+    right: 28,
+    zIndex: 110,
+  }}
+/>
+<QuoteDisplay mentorOn={mentorOn} presetQuotes={presetQuotes} />
+        </>
+      )
+    }
+  </div>
+)
+
 }
 
 export default Test;

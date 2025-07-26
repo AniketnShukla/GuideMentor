@@ -129,6 +129,13 @@ nav > ul{
 .navButton{
     display: none;
 }
+.mentor-enabled {
+    color: #ffe19c;
+    font-weight: 600;
+    /* optional: subtle underline or glow to show it’s active */
+    text-shadow: 0 2px 10px #ffe19c44;
+  }
+  
 @media screen and (max-width:600px){
     
     #nav{

@@ -8,6 +8,7 @@ import imageReducer from './features/bgImage/imageSlice'
 import emotionReducer from './features/emotions/emotionsSlice'
 import userDataReducer from './features/userData/userDataSlice'
 import sessionReducer from './features/session/sessionSlice'
+import mentorReducer from './features/mentor/mentorSlice';
 
 const reducer = combineReducers({
     stateReducer,
@@ -20,6 +21,7 @@ const store = configureStore({
         quote: quoteReducer,
         image: imageReducer,
         userData: userDataReducer,
+        mentor: mentorReducer,
         [apiSlice.reducerPath]: apiSlice.reducer,
         reducer,
     },
