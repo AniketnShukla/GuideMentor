@@ -2,7 +2,7 @@
     padding: 1rem 1rem;
     pointer-events: none;
     color: white;
-    position: absolute;
+    position: absolute !important;
     bottom: 6%;
     left: 4%;
     right: 0;
