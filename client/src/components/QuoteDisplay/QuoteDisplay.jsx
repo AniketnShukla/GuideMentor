@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux'
 import useSpeechWordsWithMood from './../../hooks/useSpeechWordsWithMood'
 import './../../Home.css'
 
-const QuoteDisplay = ({ mentorOn, presetQuotes }) => {
+const QuoteDisplay = ({ mentorOn, presetQuotes, words, mood }) => {
   const author = useSelector((state) => state.quote.author)
   const quote = useSelector((state) => state.quote.quote)
 
   // Mentor logic
-  const { words, mood } = useSpeechWordsWithMood();
   const [quoteObj, setQuoteObj] = useState(null);
 
   useEffect(() => {

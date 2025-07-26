@@ -84,7 +84,7 @@ import GoldenBlob from '../components/GoldenBlob';
 import EqualizerBars from '../components/EqualizerBars';
 import useAudioAnalyzer from '../hooks/useAudioAnalyzer';
 import useSpeechWordsWithMood from '../hooks/useSpeechWordsWithMood';
-
+import { useSelector } from 'react-redux';
 function BlobBars({ spectrum, radius = 1.3 }) {
   return (
     <group>
@@ -115,7 +115,24 @@ export default function Visualizer({
     ? useAudioAnalyzer()
     : { energy: externalEnergy, spectrum: externalSpectrum || new Array(64).fill(0) };
   const { words, mood } = !mini ? useSpeechWordsWithMood() : { words: [], mood: '' };
+  const moodColors = {
+    angry:      { color: "#fde8e6", attenuation: "#fbb9b4" },  // light reddish
+    overwhelmed:{ color: "#fdf2ea", attenuation: "#f7e3c9" },  // peachy
+    frustrated: { color: "#fdf6ea", attenuation: "#f4eac9" },  // light yellow
+    insecure:   { color: "#eaf3fb", attenuation: "#c8def6" },  // gentle blue
+    lonely:     { color: "#f1eafd", attenuation: "#d3c8f6" },  // purple tint
+    sad:        { color: "#eaf0fb", attenuation: "#b4c9f5" },  // cool blue
+    fear:       { color: "#fdfaea", attenuation: "#f7f5c9" },  // pale yellow
+    jealous:    { color: "#edfaea", attenuation: "#bdf7c9" },  // pale green
+    lacking_motivation: { color: "#ececec", attenuation: "#cbcbcb" }, // grayish
+    procrastinating:    { color: "#fbfbea", attenuation: "#e8e7b9" }, // sand
+    gloomy:     { color: "#eaeafa", attenuation: "#b9b9e8" },  // dusty blue
+    neutral:    { color: "#f4f8fb", attenuation: "#eaf1fb" },  // soft neutral
+  };
+  const emotion = useSelector(state => state.mood || "neutral"); // or however you access the current mood
 
+  const glassColors = moodColors[emotion] || moodColors["neutral"];
+  
   return (
     <div
       style={{
@@ -128,7 +145,7 @@ export default function Visualizer({
         opacity: mini ? 0.95 : 1,
         pointerEvents: mini ? 'none' : 'auto',
         borderRadius: mini ? '50%' : 0,
-        boxShadow: mini ? '0 2px 12px #0007' : 'none',
+        // boxShadow: mini ? '0 2px 12px #0007' : 'none',
         ...style,
       }}
     >
@@ -148,7 +165,12 @@ export default function Visualizer({
         <pointLight position={[0, 2, 2]} intensity={1} color={'#fff8e3'} />
         <pointLight position={[-2, -2, 2]} intensity={0.4} color={'#ffe19c'} />
 
-        <GoldenBlob energy={energy} />
+        {/* <GoldenBlob energy={energy} /> */}
+        <GoldenBlob
+  energy={energy}
+  color={glassColors.color}
+  attenuationColor={glassColors.attenuation}
+/>
         {showShards && <EqualizerBars energy={energy} />}
         {/* Or show BlobBars for the ring style: */}
         {/* showShards && <BlobBars spectrum={spectrum} /> */}

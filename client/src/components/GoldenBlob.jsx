@@ -1,10 +1,19 @@
-// File: src/components/GoldenBlob.jsx
-
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-export default function GoldenBlob({ energy = 0 }) {
+function subtleNoise(x, y, z, t) {
+  return (
+    Math.sin(x * 3.1 + t * 1.7) * 0.04 +
+    Math.cos(y * 2.3 - t * 2.3) * 0.04 +
+    Math.sin(z * 4.0 + t * 2.2) * 0.025
+  );
+}
+export default function GoldenBlob({
+    energy = 0,
+    color = "#f4f8fb",
+    attenuationColor = "#eaf1fb"
+  }) {
   const meshRef = useRef();
   const geometryRef = useRef();
 
@@ -27,11 +36,24 @@ export default function GoldenBlob({ energy = 0 }) {
       const oy = initialPositions[ix + 1];
       const oz = initialPositions[ix + 2];
 
-      const distance = Math.sqrt(ox * ox + oy * oy + oz * oz);
-      const lowFreq = Math.sin(now * 2 + distance * 3) * 0.3;
-      const highFreq = Math.sin(now * 20 + distance * 12) * 0.2;
-      const deformation = lowFreq * (1 - energy) + highFreq * energy;
-      const scale = 1 + deformation * energy * 2.0;
+      const baseDistance = Math.sqrt(ox * ox + oy * oy + oz * oz);
+
+      // Almost static idle
+      const idle = 1 + Math.sin(now * 0.8 + baseDistance * 7) * 0.010;
+
+      // Very subtle surface noise
+      const noise = subtleNoise(ox, oy, oz, now) * 0.07;
+
+      // Audio excitement - crisp, but not overdone
+      const audioMorph =
+        1 +
+        (Math.sin(now * 5.6 + baseDistance * 13 + ox * 2.3) +
+          Math.cos(now * 4.1 + oy * 5.0 + oz * 1.2)) *
+          (0.028 + energy * 0.19) * energy;
+
+      // Blend - very subtle
+      const scale =
+        idle * (1 + noise) * audioMorph;
 
       pos.array[ix] = ox * scale;
       pos.array[ix + 1] = oy * scale;
@@ -39,44 +61,30 @@ export default function GoldenBlob({ energy = 0 }) {
     }
 
     pos.needsUpdate = true;
-    mesh.rotation.y += 0.008;
+    mesh.rotation.y += 0.006 + energy * 0.010;
+    mesh.rotation.x += 0.0007 * Math.sin(now * 0.31);
   });
+console.log("Blob got energy:", energy);
 
   return (
     <mesh ref={meshRef} castShadow receiveShadow>
       <sphereGeometry ref={geometryRef} args={[1, 64, 64]} />
-      {/* <meshPhysicalMaterial
-        transmission={1}
-        roughness={0.05}
-        thickness={1.5}
-        clearcoat={1}
-        clearcoatRoughness={0.03}
-        transparent={true}
-        opacity={0.7}
-        reflectivity={0.7}
-        metalness={0.1}
-        emissive={'#ffeecc'}
-        emissiveIntensity={0.3 + energy * 1.5}
-        ior={1.52}
-        attenuationColor={'#aaffee'}
-        attenuationDistance={0.8}
-      /> */}
       <meshPhysicalMaterial
-  color={'#ffe19c'}
-  transmission={1}
-  roughness={0.08}
-  thickness={2}
+        color={color}          // NOT pure white, subtle neutral blue-gray
+  transmission={0.98}           // Ultra high, but not 1.0 (for subtle lensing)
+  roughness={0.05}              // Smooth but not perfect
+  thickness={0.1}               // How “deep” the glass feels
   clearcoat={1}
-  clearcoatRoughness={0.04}
+  clearcoatRoughness={0.008}
   transparent={true}
-  opacity={0.96}
-  reflectivity={0.9}
-  metalness={0.35}
-  emissive={'#f3b74a'}
-  emissiveIntensity={0.35 + energy * 1.2}
-  ior={1.52}
-  attenuationColor={'#ffe19c'}
-  attenuationDistance={0.6}
+  opacity={0.86}                // Low opacity for real glass layering
+  reflectivity={0.93}
+  metalness={0.09}
+  ior={1.5}
+  attenuationColor={attenuationColor}  // Soft, slightly blueish—like frosted glass
+  attenuationDistance={0.24}
+  emissive="#000"
+  emissiveIntensity={0.02 + energy * 0.09}
 />
     </mesh>
   );

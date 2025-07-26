@@ -27,11 +27,12 @@ import { IoFootstepsOutline  } from "react-icons/io5";
 import { PiMaskSadThin } from "react-icons/pi";
 import MoodMentor from './components/MoodMentor'; // <-- Add this
 import useAudioAnalyzer from './hooks/useAudioAnalyzer'
-import Visualizer from './pages/Visualizer'
+import Visualizer from './pages/Visualizer';
+import useSpeechWordsWithMood from './hooks/useSpeechWordsWithMood';
 
 const Test = () => {
   
-  const { energy, spectrum } = useAudioAnalyzer()
+  const { energy, spectrum } = useAudioAnalyzer();
   const [presetEmotionsIconsObj, setPresetEnotionsIconsObj] = useState({
     "angry": <SlFire style={{ fontSize:'1.9rem'}} />,
     "overwhelmed": <GiTornado style={{ fontSize:'1.9rem'}} />,
@@ -142,12 +143,12 @@ function MiniBlob() {
       >
         <ambientLight intensity={0.44} />
         <directionalLight position={[5, 5, 5]} intensity={0.8} />
-        <GoldenBlob energy={0.15} />
+        {/* <GoldenBlob energy={0.15} /> */}
       </Canvas>
     </div>
   )
 }
-
+const speech = useSpeechWordsWithMood();
 return (
   <div className="App" id="App">
     <ToastContainer className='toaster-container'/>
@@ -172,14 +173,20 @@ return (
   mini={true}
   showShards={true} // or false if you want only the blob
   style={{
-    width: 300,
-    height: 300,
-    bottom: 420,
+    width: 200,
+    height: 200,
+    bottom: 220,
     right: 28,
     zIndex: 110,
   }}
 />
-<QuoteDisplay mentorOn={mentorOn} presetQuotes={presetQuotes} />
+{/* <QuoteDisplay mentorOn={mentorOn} presetQuotes={presetQuotes} /> */}
+<QuoteDisplay
+      mentorOn={mentorOn}
+      presetQuotes={presetQuotes}
+      words={speech.words}
+      mood={speech.mood}
+    />
         </>
       )
     }
