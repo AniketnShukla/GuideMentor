@@ -112,7 +112,9 @@ const NavBar = () => {
               </div>
               <div id='bottom'>
                 <div className='nav-links'>
-                  <li><Link to='/about' >About</Link></li>
+                  <li onClick={() => navigate(location.pathname === '/about' ? '/' : '/about')}>
+                    About
+                  </li>
                 </div>
               {currentUser ?(
                 <>
